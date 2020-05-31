@@ -1,17 +1,13 @@
 ---
-date: "2014-04-09"
-title: About Hugo
+date: "05-30-2020"
+title: About Me
 ---
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+Hello! This is Apoorva Srinivasan's blog. I am a recent biostatistics graduate from Columbia University Mailman School of Public Health.
 
-It makes use of a variety of open source projects including:
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+[Here](http://apoorvasrinivasan.me) is my main website.
+
+You can also follow me on [Twitter](https://twitter.com/apoorvasriniva1) or check out my [GitHub](https://github.com/apoorvasrinivasan26)
 
