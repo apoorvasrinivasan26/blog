@@ -1,0 +1,13 @@
+---
+title: mental health and racial disparities
+author: ''
+date: '2020-06-06'
+slug: mental-health-and-race
+categories: []
+tags: []
+description: ''
+draft: true
+---
+
+
+this is my first post. hopefully this works!
