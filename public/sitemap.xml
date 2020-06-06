@@ -38,26 +38,6 @@
   </url>
   
   <url>
-    <loc>/tags/demo/</loc>
-    <lastmod>2018-09-29T11:36:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2018-09-29T11:36:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/typography/</loc>
-    <lastmod>2018-09-29T11:36:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/typography/</loc>
-    <lastmod>2018-09-29T11:36:33+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/hugo-template-primer/</loc>
     <lastmod>2014-04-02T00:00:00-04:00</lastmod>
   </url>
@@ -69,6 +49,11 @@
   
   <url>
     <loc>/tags/golang/</loc>
+    <lastmod>2014-04-02T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
     <lastmod>2014-04-02T00:00:00-04:00</lastmod>
   </url>
   
@@ -92,7 +77,19 @@
   </url>
   
   <url>
+    <loc>/tags/demo/</loc>
+  </url>
+  
+  <url>
     <loc>/series/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/typography/</loc>
+  </url>
+  
+  <url>
+    <loc>/post/typography/</loc>
   </url>
   
 </urlset>
