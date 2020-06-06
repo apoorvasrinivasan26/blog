@@ -55,7 +55,7 @@ Lists:
 
 Syntax Highlighting:
 
-```javascript
+```python
 var num1, num2, sum;
 num1 = prompt("Enter first number");
 num2 = prompt("Enter second number");
