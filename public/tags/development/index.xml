@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>development on Welcome</title>
-    <link>/tags/development/</link>
+    <link>https://www.example.com/tags/development/</link>
     <description>Recent content in development on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
     <lastBuildDate>Sun, 10 Feb 2019 16:53:06 -0500</lastBuildDate>
     
-	<atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.example.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo</title>
-      <link>/project/hugo/</link>
+      <link>https://www.example.com/project/hugo/</link>
       <pubDate>Sun, 10 Feb 2019 16:53:06 -0500</pubDate>
       
-      <guid>/project/hugo/</guid>
+      <guid>https://www.example.com/project/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/post/hugo-template-primer/</link>
+      <link>https://www.example.com/post/hugo-template-primer/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 -0400</pubDate>
       
-      <guid>/post/hugo-template-primer/</guid>
+      <guid>https://www.example.com/post/hugo-template-primer/</guid>
       <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
 This document is a brief primer on using Go templates.</description>
     </item>
