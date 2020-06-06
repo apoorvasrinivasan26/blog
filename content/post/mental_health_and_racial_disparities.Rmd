@@ -1,5 +1,5 @@
 ---
-title: "Mental Health and Racial Disparities"
+title: "Mental Healthand Racial Disparities"
 author: "Apoorva Srinivasan"
 date: "6/6/2020"
 output: html_document
@@ -11,3 +11,4 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 This is a test commit
+
