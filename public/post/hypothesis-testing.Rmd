@@ -1,0 +1,94 @@
+---
+title: everything you need to know about hypothesis testing
+author: ''
+date: '2020-06-06'
+slug: hypothesis-testing
+categories: []
+tags: []
+description: ''
+---
+
+
+Welcome to my first blogpost! I hope to keep posting about statistics fundamentals, my thoughts on public health and healthcare on a regular basis. I am excited for you all to join me!
+
+
+
+## what is hypothesis testing?
+
+Before we get into what hypothesis testing is, let's talk about what hypothesis is.
+
+A hypothesis is an educated guess about something in the world around you. It should be testable, either by experiment or observation. 
+
+For example:
+
+Will this medicine work better?
+Will my students score more with this new method of teaching?
+Are women better at multitasking than men?
+Does chocolate have an effect on athletic performance?
+Does jelly bean cause acne?
+
+The word hypothesis brings the image of a scientist investigating something and that is the right mindframe to understand what hypothesis testing does. 
+
+
+Imagine you 
+
+Sample data can be used to decide whether some claim or hypothesis about the population characteristic is plausible
+
+
+A hypothesis test is a method for using sample data to decide between two
+competing claims (hypotheses) about a population characteristic. If it were
+possible to carry out a census of the entire population then we would know
+which of the two hypotheses are correct, but usually it is the case that we need
+to decide between the two hypotheses using information from a sample.
+
+
+* The null hypothesis, denoted by H0, is a claim about a population characteristic that we initially assume to be true (we often set up the hypotheses in hopes of finding evidence against H0).
+
+* The alternative hypothesis, denoted by H1, is the competing claim (we often set up hypotheses in hopes of showing that H1 is true).
+
+
+In carrying out a hypothesis test of H0 versus H1, the hypothesis H0 is rejected in favor of H1 only if sample evidence strongly suggests that H0 is false. If the sample does not provide such evidence, then H0 is not rejected. Therefore the two possible outcomes of a hypothesis test are reject H0 or
+fail to reject H0 (in some cases we say “fail to reject H0 in favor of H1”).
+
+
+We can draw an analogy between hypothesis testing and the court system that might be illustrative:
+
+• A hypothesis test is like holding a trial (going to court)
+• H0 is assumed true (innocent) until ”proven” otherwise (guilty)
+• We have evidence to help us come to a decision (verdict)
+• Possible outcomes
+• Reject H0 (guilty)
+• Fail to reject H0 (not guilty)
+• Note: hypothesis test are not concerned with accepting H0, just as trials are not concerned
+with proving innocence
+• Keep in mind that the hypotheses are statements about POPULATION PARAMETERS not statistics. We only use statistics as evidence to help us assess the claims about the population.
+
+* When setting up a hypothesis test it is important to decide if the question of interest will require a one-sided or two-sided hypothesis test. The differences will be illustrated in the following example. Regardless, the null and alternative hypothesis MUST be formulated prior to collection of the data.
+
+Template for conducting hypothesis testing
+
+* Explicitly define the population parameter of interest.
+* State the null and alternative hypotheses.
+* State the significance level of the test.
+* State any necessary assumptions.
+* State the form of the test statistic and its null distribution
+* State the decision rule and/or compute the p-value (to be discussed in a bit) and make a decision.
+* State your conclusions in the context of the problem.
+
+## Why use hypothesis tests?
+
+Let’s take a step back for a moment and restate why we should use a hypothesis test rather than just use the sample means to decide. Samples are a subset of the entire population. Sample statistics, such as the mean, are unlikely to equal the actual population values. The difference between the sample value and the population value is called sample error.
+
+An effect observed in any sample can actually be caused by sample error rather than representing a true difference between the population means. For this test, we need to determine whether the 8 point difference between women and men is sample error or a real effect. If the difference is due to sample error, the next time someone performs this experiment the results could be different.
+
+Hypothesis tests incorporate estimates of the sampling error to help us make the correct decision.
+
+####what is hypothesis and hypothesis testing?
+### why do it?
+### null , alt and outcomes
+### how to determine? test statistic!
+
+
+
+
+
