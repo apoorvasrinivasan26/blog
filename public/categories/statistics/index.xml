@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Welcome</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Welcome</description>
+    <title>statistics on Welcome</title>
+    <link>/categories/statistics/</link>
+    <description>Recent content in statistics on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
     <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,16 +21,6 @@
       <description>THIS IS STILL UNDER CONSTRUCTION. PLESE CHECK BACK LATER
 If there’s anything statisticians love to talk about its hypothesis testing. In this post, we will talk about everything you need to get started with hypothesis testing. There are a lot of rules and terminilogy to keep in mind while doing it but it’s going to be easy when we break it down into smaller parts.
 This blogpost is meant for people getting started with statistics.</description>
-    </item>
-    
-    <item>
-      <title>on edward jenner and creativity</title>
-      <link>/post/on-edward-jenner-and-creativity/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/on-edward-jenner-and-creativity/</guid>
-      <description>One common question that’s on everyone’s minds as we fiercely scrub our hands, pool our resources, conserve our consumption, stock up (but not hoard), invent calculus or write King Lear is: when will this end? Nobody knows what the answer to that question is but we are all in agreement that it could be in the faraway promise land of vaccines.
-Although vaccination now is a common method to provide long-term protection against a disease, it was unheard of until about 200 years ago.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
 ---
-title: everything you need to know about hypothesis testing
+title: introduction to hypothesis testing
 author: ''
 date: '2020-06-06'
 slug: hypothesis-testing
-categories: []
+categories: [statistics]
 tags: []
 description: ''
 ---
@@ -12,16 +12,16 @@ description: ''
 THIS IS STILL UNDER CONSTRUCTION. PLESE CHECK BACK LATER
 
 
-If there's anything statisticians love to talk about its hypothesis testing. In this post, we will talk about everything you need to get started with hypothesis testing.
+If there's anything statisticians love to talk about its hypothesis testing. In this post, we will talk about everything you need to get started with hypothesis testing. There are a lot of rules and terminilogy to keep in mind while doing it but it's going to be easy when we break it down into smaller parts.
 
-This blog is meant for people getting started with statistics. Turns out, even those with some experience in statistics can find use in it
+This blogpost is meant for people getting started with statistics. Turns out, even those with some experience in statistics can find use in it
 
 
 ```{r echo=FALSE}
 blogdown::shortcode('tweet', '1269814141004288001')
 ```
 
-Before you get into tetsing, let's talk aout what hypothesis is
+It starts with a hypothesis.
 
 ## what is hypothesis??
 
@@ -34,22 +34,48 @@ A hypothesis is an educated guess about something in the world around you. It sh
 * Does eating jelly bean cause acne? 
 * Does coffee stunt your growth?
 
-Let's focus on the last hypothesis.
 
-Imagine we sampled data from a population of young adults that drink coffee vs those that dont.
+Let's focus on the last question. We want to know if the mean height for population that drinks coffee is different from the population that doesn't.
+
+
+You go out and collect data from a sample of 34 young adults that drink coffee vs. 32  of those that don't. Now you're ready to do hypothesis testing!
+
+## Why use hypothesis tests?
+
+Let’s take a step back for a moment and restate why we should use a hypothesis test rather than just use the sample means to decide. Samples are a subset of the entire population. Sample statistics, such as the mean, are unlikely to equal the actual population values. The difference between the sample value and the population value is called sample error. We want to minimize this error to infer stuff about the population.
+
+
+
 
 
 Lets say the height of an adolescent boy that drnks coffee is 175 and someone who doesnt is lower
 
-In general terms the hypothesis can be:
+In general terms the hypothesis can be: 
 
 
-The null hypothesis, denoted by H0, is a claim about a population characteristic that we initially
-assume to be true 
+The __null hypothesis__, denoted by H0, is a claim about a population characteristic that we initially assumed to be true 
+
+The __alternative hypothesis__, denoted by H1, is the competing claim (we often set up hypotheses in hopes of showing that H1 is true).
 
 
+In carrying out a hypothesis test of H0 versus H1, the hypothesis H0 is rejected in favor of H1 only if sample evidence strongly suggests that H0 is false. If the sample does not provide such evidence, then H0 is not rejected. Therefore the two possible outcomes of a hypothesis test are reject H0 or fail to reject H0 (in some cases we say “fail to reject H0 in favor of H1”).
 
-Let's generate data!
+ :exclamation: :exclamation: :bangbang:  :heavy_exclamation_mark:
+ 
+ Please note that failing to reject H0 does not mean that we accept H0.
+ 
+
+ 
+
+Template for conducting hypothesis testing
+
+* Explicitly define the population parameter of interest.
+* State the null and alternative hypotheses.
+* State the significance level of the test.
+* State any necessary assumptions.
+* State the form of the test statistic and its null distribution
+* State the decision rule and/or compute the p-value and make a decision.
+* State your conclusions in the context of the problem.
 
 
 
