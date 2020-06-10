@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Welcome</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Welcome</description>
+    <title>thoughts on Welcome</title>
+    <link>/tags/thoughts/</link>
+    <description>Recent content in thoughts on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/thoughts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>everything you need to know about hypothesis testing</title>
-      <link>/post/hypothesis-testing/</link>
-      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/hypothesis-testing/</guid>
-      <description>THIS IS STILL UNDER CONSTRUCTION. PLESE CHECK BACK LATER
-If there’s anything statisticians love to talk about its hypothesis testing. In this post, we will talk about everything you need to get started with hypothesis testing.
-This blog is meant for people getting started with statistics. Turns out, even those with some experience in statistics can find use in it
-Me: Writes papers, TAs graduate courses, talks stats on twitter</description>
-    </item>
     
     <item>
       <title>on edward jenner and creativity</title>
       <link>/post/on-edward-jenner-and-creativity/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/on-edward-jenner-and-creativity/</guid>
       <description>One common question that’s on everyone’s minds as we fiercely scrub our hands, pool our resources, conserve our consumption, stock up (but not hoard), invent calculus or write King Lear is: when will this end? Nobody knows what the answer to that question is but we are all in agreement that it could be in the faraway promise land of vaccines.
