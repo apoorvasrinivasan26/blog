@@ -60,12 +60,12 @@ Let’s take a step back for a moment and restate why we should use a hypothesis
 
 Now that it's clear why we should be doing hypothesis testing. Below is a rough template to carry out hypothesis testing. 
 
-1) Explicitly define the population parameter of interest.
-2)State the null and alternative hypotheses.
-3) State the significance level of the test.
-4) State the form of the test statistic and its null distribution
-5) State the decision rule and/or compute the p-value and make a decision.
-6) State your conclusions in the context of the problem.
+1. Explicitly define the population parameter of interest.
+2. State the null and alternative hypotheses.
+3. State the significance level of the test.
+4. State the form of the test statistic and its null distribution
+5. State the decision rule and/or compute the p-value and make a decision.
+6. State your conclusions in the context of the problem.
 
 
 ### 1) explicitly define the population parameter of interest.
