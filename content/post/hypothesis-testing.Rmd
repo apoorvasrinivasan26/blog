@@ -72,7 +72,7 @@ Now that it's clear why we should be doing hypothesis testing. Below is a rough 
 
 A population parameter of interest is the value(usually mean) we're hypothesizing on with our data. In our case, the population parameter of interest is 
 
-$\mu$ = mean height for adolescent coffee drinkers
+$\mu$ = mean height for coffee drinkers
 
 ### 2) state the null and alternative hypotheses.
 
