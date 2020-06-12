@@ -196,3 +196,4 @@ In the R output, (Intercept) is $\beta_0$ while x is $\beta_1$. $\beta_0$ is the
 
 
 
+

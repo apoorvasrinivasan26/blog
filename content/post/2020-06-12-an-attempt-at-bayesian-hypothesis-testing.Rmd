@@ -1,0 +1,15 @@
+---
+title: an attempt at bayesian hypothesis testing
+author: ''
+date: '2020-06-12'
+slug: an-attempt-at-bayesian-hypothesis-testing
+categories:
+  - statistics
+tags:
+  - statistics
+  - R
+  - bayesian
+description: ''
+---
+
+

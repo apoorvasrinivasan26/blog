@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Welcome</title>
-    <link>/categories/</link>
-    <description>Recent content in Categories on Welcome</description>
+    <title>bayesian on Welcome</title>
+    <link>/tags/bayesian/</link>
+    <description>Recent content in bayesian on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
     <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/bayesian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>statistics</title>
-      <link>/categories/statistics/</link>
+      <title>an attempt at bayesian hypothesis testing</title>
+      <link>/post/an-attempt-at-bayesian-hypothesis-testing/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>/categories/development/</link>
-      <pubDate>Sun, 10 Feb 2019 16:53:06 -0500</pubDate>
-      
-      <guid>/categories/development/</guid>
+      <guid>/post/an-attempt-at-bayesian-hypothesis-testing/</guid>
       <description></description>
     </item>
     
