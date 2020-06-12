@@ -60,22 +60,21 @@ Let’s take a step back for a moment and restate why we should use a hypothesis
 
 Now that it's clear why we should be doing hypothesis testing. Below is a rough template to carry out hypothesis testing. 
 
-* Explicitly define the population parameter of interest.
-* State the null and alternative hypotheses.
-* State the significance level of the test.
-* State any necessary assumptions.
-* State the form of the test statistic and its null distribution
-* State the decision rule and/or compute the p-value and make a decision.
-* State your conclusions in the context of the problem.
+1) Explicitly define the population parameter of interest.
+2)State the null and alternative hypotheses.
+3) State the significance level of the test.
+4) State the form of the test statistic and its null distribution
+5) State the decision rule and/or compute the p-value and make a decision.
+6) State your conclusions in the context of the problem.
 
 
-### 1) Explicitly define the population parameter of interest.
+### 1) explicitly define the population parameter of interest.
 
 A population parameter of interest is the value(usually mean) we're hypothesizing on with our data. In our case, the population parameter of interest is 
 
 $\mu$ = mean height for adolescent coffee drinkers
 
-### 2) State the null and alternative hypotheses.
+### 2) state the null and alternative hypotheses.
 
 
 In general terms the hypothesis can be: 
@@ -118,12 +117,11 @@ $\mu_nc$ = mean height of the population that doesn't drink coffee
 
 
         
-### 3) State the significance level of the test
+### 3) state the significance level of the test
 
 
 Once hypotheses have been formulated, we need a method for using sample data to determine whether $H_0$ should be rejected or not. The method that we use is called a test procedure. Unfortunately, just as a jury may reach the wrong verdict in a trial, there is some chance that the use of a test procedure based on sample data may lead us to the wrong conclusion about a population characteristic.
 
-## types of error
 
 Type 1 error = $P(reject H_0 / H_0 is true)$
 
@@ -138,27 +136,16 @@ Type 1 error ==> say guilty, when in fact, not guilty
 Type 2 error ==> say not guilty, when in fact, guilty
 
 
+:heavy_exclamation_mark: :heavy_exclamation_mark: Neglecting to think adequately about possible consequences of Type I and Type II errors can lead to severe consequence. this trade off should be made based on the context of the problem :heavy_exclamation_mark: :heavy_exclamation_mark:
+
 <img src="/post/hypothesis-testing_files/errors_redone.png" alt="final image" width="800" class="center"/>
 
-#### But what does setting a significance level mean?
+_but what does setting a significance level mean?_
 
-It represents our tolerance for type 1 error. It's usually repesented by $\alpha$. 
-
-We set the significance level
+It represents our tolerance for type 1 error. It's usually repesented by $\alpha$. Ideally, we want to choose a significance level that minimizes the likelihood of one of these errors.i.e. a very small significance level. Significance levels such as 0.05 and 0.01 are common in most fields.
 
 
-
-### 4)  State any necessary assumptions.
-
-It is usually good practice to state your assumptions about the sample distribution at this point. 
-
-Some common assumptions:
-
-* is your data a random sample from normal distribution?
-* does it have >30 points for CLT to kick in?
-
-
-### 5) State the form of the test statistic and its null distribution
+### 4) state the form of the test statistic and its null distribution
 
 
 Now that we know the possible errors that we can make and how we should control them, we need to figure out exactly what it is that we mean by “evidence against $H_0$”.
@@ -166,7 +153,7 @@ Now that we know the possible errors that we can make and how we should control 
 Evidence against the null hypothesis comes in the form of a __test statistic__, TS. A test statistic is a summary statistic that is a function of the sample data on which the conclusion to reject or fail to reject H0 is based. The most common types of test statistics are Z and t test statistic. [Here](https://www.scribbr.com/statistics/statistical-tests/) is a link to a comprehensive list
 
 
-### 6) State the decision rule and/or compute the p-value and make a decision.
+### 5) state the decision rule and/or compute the p-value and make a decision.
 
 Another important part of any hypothesis test is the __decision rule__. The decision rule is a procedure that tells us when to reject or not to reject H0 and is based on the test statistic.  Statisticians describe these decision rules in two ways - with reference to a P-value or with reference to a region of acceptance
 
@@ -181,7 +168,7 @@ The range of values over which we do not reject H0 is called the __acceptance re
 However, in practice, most statisticians/ researchers make the decision by computing p-values. Keep in mind p-values are widely misconstructed in the literature. Go through [this link](http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf) for common misconceptions and how to avoid them.
 
 
-### State your conclusions in the context of the problem.
+### 6) state your conclusions in the context of the problem.
 
 Circling back to our example, we take the p-value route to make a decision. Because the t-test is simply a general linear model with one categorical predictor, we can run:
 
@@ -192,8 +179,14 @@ summary(lm(y ~ x, dat))
 
 Putting it in an equation, we can say $y_i = \beta_0 + \beta_1 x_i + \epsilon$
 
-In the R output, (Intercept) is $\beta_0$ while x is $\beta_1$. $\beta_0$ is the mean of the group in which our categorical predictor is 0, i.e. the group which does not drink coffee. The group that did drink coffee, on the other hand, has a mean decrease in height of ~5 cm. However, since the p-value is 0.107 We would conclude that the probability of observing these data or more extreme data given that there really is no effect is ~10%. Using the conventional cutoff, $\alpha = 0.05$, we would say that we fail to reject our null hypothesis that there is no difference between the two groups.
+In the R output, (Intercept) is $\beta_0$ while x is $\beta_1$. $\beta_0$ is the mean of the group in which our categorical predictor is 0, i.e. the group which does not drink coffee. The group that does drink coffee, on the other hand, has a mean decrease in height of ~5 cm. However, since the p-value is 0.107 We would conclude that the probability of observing these data or more extreme data given that there really is no effect is ~10%. Using the conventional cutoff, $\alpha = 0.05$, we would say that we fail to reject our null hypothesis that there is no difference between the two groups.
 
+
+### further reading:
+
+* [statistical hypothesis testing](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)
+* [statitical significance](https://en.wikipedia.org/wiki/Statistical_significance)
+* [twelve p-value misconceptions](http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf)
 
 
 
