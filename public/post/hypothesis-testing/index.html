@@ -45,7 +45,8 @@
 />
 <meta
   name="twitter:description"
-  content="There’s two main branches of statistics. One, where we collect and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. Hypothesis testing is one way to make that inference and so it is called inferential statistics. It can be confusing because there are endless terminilogies and rules to keep in mind but we can tackle it by breaking it down into smaller parts.|"
+  content="Hello and welcome to my brand new website! I’ve started this blog to think through various statistical concepts and techniques and hopefully they’ll be useful to you too! Let’s start with every statisticians favorite flex: hypothesis testing
+There’s two main branches of statistics. One, where we analyze and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. This is called inferential statistics and hypothesis testing is an important part of it.|"
 />
 <meta name="twitter:image:src" content="" />
 <meta name="twitter:domain" content="/post/hypothesis-testing/" />
@@ -119,7 +120,8 @@ if (!doNotTrack) {
 <script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<p>There’s two main branches of statistics. One, where we collect and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. Hypothesis testing is one way to make that inference and so it is called inferential statistics. It can be confusing because there are endless terminilogies and rules to keep in mind but we can tackle it by breaking it down into smaller parts. Let’s get started!</p>
+<p>Hello and welcome to my brand new website! I’ve started this blog to think through various statistical concepts and techniques and hopefully they’ll be useful to you too! Let’s start with every statisticians favorite flex: hypothesis testing</p>
+<p>There’s two main branches of statistics. One, where we analyze and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. This is called inferential statistics and hypothesis testing is an important part of it. It can be confusing because there are endless terminilogies and rules to keep in mind but we can tackle it by breaking it down into smaller parts. Let’s get started!</p>
 <p><img src="/post/hypothesis-testing_files/sampling.png" alt="final image" width="800" class="center"/></p>
 <p>It starts with a hypothesis.</p>
 <div id="what-is-hypothesis" class="section level2">
@@ -131,7 +133,7 @@ if (!doNotTrack) {
 <li>Will putting on a hat make me more productive?</li>
 <li>Does coffee stunt your growth?</li>
 </ul>
-<p>Let’s say you’re interested in finding out if coffee stunts your growth. Instead of collecting real data, we just simulate data, assuming a real effect of Cohen’s <span class="math inline">\(\ d = 7/15\)</span></p>
+<p>Let’s say you’re interested in finding out if coffee stunts your growth. Instead of collecting real data, we just simulate data for adolescent coffee drinkers, assuming a real effect of Cohen’s <span class="math inline">\(\ d = 7/15\)</span></p>
 <pre class="r"><code>set.seed(666)
  
 x &lt;- rep(0:1, each = 50)
@@ -148,8 +150,25 @@ boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
 <h2>why use hypothesis tests?</h2>
 <p>Let’s take a step back for a moment and restate why we should use a hypothesis test rather than just use the sample means to decide. Samples are a subset of the entire population. Sample statistics, such as the mean, are unlikely to equal the actual population values. The difference between the sample value and the population value is called sample error. If sample error causes the observed difference, the next time someone performs the same experiment the results might be different. Hypothesis testing incorporates estimates of the sampling error to help you make the correct decision.</p>
 </div>
-<div id="hypothesis-testing" class="section level2">
-<h2>hypothesis testing</h2>
+<div id="template-for-conducting-hypothesis-testing" class="section level2">
+<h2>template for conducting hypothesis testing</h2>
+<p>Now that it’s clear why we should be doing hypothesis testing. Below is a rough template to carry out hypothesis testing.</p>
+<ul>
+<li>Explicitly define the population parameter of interest.</li>
+<li>State the null and alternative hypotheses.</li>
+<li>State the significance level of the test.</li>
+<li>State any necessary assumptions.</li>
+<li>State the form of the test statistic and its null distribution</li>
+<li>State the decision rule and/or compute the p-value and make a decision.</li>
+<li>State your conclusions in the context of the problem.</li>
+</ul>
+<div id="explicitly-define-the-population-parameter-of-interest." class="section level3">
+<h3>1) Explicitly define the population parameter of interest.</h3>
+<p>A population parameter of interest is the value(usually mean) we’re hypothesizing on with our data. In our case, the population parameter of interest is</p>
+<p><span class="math inline">\(\mu\)</span> = mean height for adolescent coffee drinkers</p>
+</div>
+<div id="state-the-null-and-alternative-hypotheses." class="section level3">
+<h3>2) State the null and alternative hypotheses.</h3>
 <p>In general terms the hypothesis can be:</p>
 <p>The <strong>null hypothesis</strong>, denoted by <span class="math inline">\(H_0\)</span>, is a claim about a population characteristic that we initially assumed to be true.</p>
 <p>The <strong>alternative hypothesis</strong>, denoted by <span class="math inline">\(H_1\)</span>, is the competing claim (we often set up hypotheses in hopes of showing that <span class="math inline">\(H_1\)</span> is true).</p>
@@ -163,35 +182,57 @@ boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
 <li>We have evidence to help us come to a decision (verdict)</li>
 <li>Possible outcomes: Reject <span class="math inline">\(H_0\)</span> (guilty) or fail to reject <span class="math inline">\(H_0\)</span> (not guilty)</li>
 </ul>
+<p>Below is the general form in which you can set up your hypothesis</p>
+<p><img src="/post/hypothesis-testing_files/hypothesis_table.png" alt="final image" width="800" class="center"/></p>
+<p>In the context of our example,</p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_c\)</span> = <span class="math inline">\(\mu_{nc}\)</span></p>
+<p><span class="math inline">\(H_1\)</span> = <span class="math inline">\(\mu_c\)</span> <span class="math inline">\(\neq\)</span> <span class="math inline">\(\mu_{nc}\)</span></p>
+<p>where <span class="math inline">\(\mu_c\)</span> = mean height of the coffee drinking population and
+<span class="math inline">\(\mu_nc\)</span> = mean height of the population that doesn’t drink coffee</p>
 </div>
-<div id="test-procedure" class="section level2">
-<h2>test procedure</h2>
+<div id="state-the-significance-level-of-the-test" class="section level3">
+<h3>3) State the significance level of the test</h3>
 <p>Once hypotheses have been formulated, we need a method for using sample data to determine whether <span class="math inline">\(H_0\)</span> should be rejected or not. The method that we use is called a test procedure. Unfortunately, just as a jury may reach the wrong verdict in a trial, there is some chance that the use of a test procedure based on sample data may lead us to the wrong conclusion about a population characteristic.</p>
+</div>
 </div>
 <div id="types-of-error" class="section level2">
 <h2>types of error</h2>
 <p>Type 1 error = <span class="math inline">\(P(reject H_0 / H_0 is true)\)</span></p>
 <p>Type 2 error = <span class="math inline">\(P(fail to reject H_0 / H_1 is true)\)</span></p>
 <p>In keeping with the jury example,</p>
-<p><img src="/post/hypothesis-testing_files/errors.png" alt="final image" width="800" class="center"/></p>
+<p>Type 1 error ==&gt; say guilty, when in fact, not guilty</p>
+<p>Type 2 error ==&gt; say not guilty, when in fact, guilty</p>
+<p><img src="/post/hypothesis-testing_files/errors_redone.png" alt="final image" width="800" class="center"/></p>
+<div id="but-what-does-setting-a-significance-level-mean" class="section level4">
+<h4>But what does setting a significance level mean?</h4>
+<p>It represents our tolerance for type 1 error. It’s usually repesented by <span class="math inline">\(\alpha\)</span>.</p>
+<p>We set the significance level</p>
 </div>
-<div id="power" class="section level2">
-<h2>power</h2>
-<p>The power of a hypothesis test is the probability of rejecting the null hypothesis given that the null hypothesis is false. When H0 is false, the power of the test is given by <span class="math inline">\(1 − \beta\)</span></p>
-<p><em>power = probability of rejecting a null hypothesis</em>
-= 1- <em>probability of not rejecting null hypothesis</em>
-= <span class="math inline">\(1 − \beta\)</span>_</p>
+<div id="state-any-necessary-assumptions." class="section level3">
+<h3>4) State any necessary assumptions.</h3>
+<p>It is usually good practice to state your assumptions about the sample distribution at this point.</p>
+<p>Some common assumptions:</p>
+<ul>
+<li>is your data a random sample from normal distribution?</li>
+<li>does it have &gt;30 points for CLT to kick in?</li>
+</ul>
 </div>
-<div id="what-is-a-hypothesis-test" class="section level2">
-<h2>what is a hypothesis test?</h2>
+<div id="state-the-form-of-the-test-statistic-and-its-null-distribution" class="section level3">
+<h3>5) State the form of the test statistic and its null distribution</h3>
 <p>Now that we know the possible errors that we can make and how we should control them, we need to figure out exactly what it is that we mean by “evidence against <span class="math inline">\(H_0\)</span>”.</p>
-<p>Evidence against the null hypothesis comes in the form of a <strong>test statistic</strong>, TS. A test statistic is a summary statistic that is a function of the sample data on which the conclusion to reject or fail to reject H0 is based.</p>
-<p>Another important part of any hypothesis test is the <strong>decision rule</strong>. The decision rule is a procedure that tells us when to reject or not to reject H0 and is based on the test statistic.</p>
+<p>Evidence against the null hypothesis comes in the form of a <strong>test statistic</strong>, TS. A test statistic is a summary statistic that is a function of the sample data on which the conclusion to reject or fail to reject H0 is based. The most common types of test statistics are Z and t test statistic. <a href="https://www.scribbr.com/statistics/statistical-tests/">Here</a> is a link to a comprehensive list</p>
+</div>
+<div id="state-the-decision-rule-andor-compute-the-p-value-and-make-a-decision." class="section level3">
+<h3>6) State the decision rule and/or compute the p-value and make a decision.</h3>
+<p>Another important part of any hypothesis test is the <strong>decision rule</strong>. The decision rule is a procedure that tells us when to reject or not to reject H0 and is based on the test statistic. Statisticians describe these decision rules in two ways - with reference to a P-value or with reference to a region of acceptance</p>
 <p>The range of values over which we do not reject H0 is called the <strong>acceptance region</strong>. The range of values over which we reject H0 is called the <strong>rejection region</strong>. The number that divides the acceptance and rejection regions is called the <strong>critical value</strong>.</p>
-<p><img src="/post/hypothesis-testing_files/one_sided.png" alt="final image" width="800" class="center"/></p>
-<p><img src="/post/hypothesis-testing_files/two_sided.png" alt="final image" width="800" class="center"/></p>
-<div id="back-to-example" class="section level3">
-<h3>back to example:</h3>
+<p><img src="/post/hypothesis-testing_files/one_sided_curve.png" alt="final image" width="800" class="center"/></p>
+<p><img src="/post/hypothesis-testing_files/two_sided_curve.png" alt="final image" width="800" class="center"/></p>
+<p>However, in practice, most statisticians/ researchers make the decision by computing p-values. Keep in mind p-values are widely misconstructed in the literature. Go through <a href="http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf">this link</a> for common misconceptions and how to avoid them.</p>
+</div>
+<div id="state-your-conclusions-in-the-context-of-the-problem." class="section level3">
+<h3>State your conclusions in the context of the problem.</h3>
+<p>Circling back to our example, we take the p-value route to make a decision. Because the t-test is simply a general linear model with one categorical predictor, we can run:</p>
 <pre class="r"><code>summary(lm(y ~ x, dat))</code></pre>
 <pre><code>## 
 ## Call:
@@ -211,16 +252,8 @@ boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
 ## Residual standard error: 15.52 on 98 degrees of freedom
 ## Multiple R-squared:  0.02636,    Adjusted R-squared:  0.01643 
 ## F-statistic: 2.653 on 1 and 98 DF,  p-value: 0.1065</code></pre>
-<p>Template for conducting hypothesis testing</p>
-<ul>
-<li>Explicitly define the population parameter of interest.</li>
-<li>State the null and alternative hypotheses.</li>
-<li>State the significance level of the test.</li>
-<li>State any necessary assumptions.</li>
-<li>State the form of the test statistic and its null distribution</li>
-<li>State the decision rule and/or compute the p-value and make a decision.</li>
-<li>State your conclusions in the context of the problem.</li>
-</ul>
+<p>Putting it in an equation, we can say <span class="math inline">\(y_i = \beta_0 + \beta_1 x_i + \epsilon\)</span></p>
+<p>In the R output, (Intercept) is <span class="math inline">\(\beta_0\)</span> while x is <span class="math inline">\(\beta_1\)</span>. <span class="math inline">\(\beta_0\)</span> is the mean of the group in which our categorical predictor is 0, i.e. the group which does not drink coffee. The group that did drink coffee, on the other hand, has a mean decrease in height of ~5 cm. However, since the p-value is 0.107 We would conclude that the probability of observing these data or more extreme data given that there really is no effect is ~10%. Using the conventional cutoff, <span class="math inline">\(\alpha = 0.05\)</span>, we would say that we fail to reject our null hypothesis that there is no difference between the two groups.</p>
 </div>
 </div>
 
