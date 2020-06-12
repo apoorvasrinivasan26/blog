@@ -18,9 +18,7 @@
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/hypothesis-testing/</guid>
-      <description>THIS IS STILL UNDER CONSTRUCTION. PLESE CHECK BACK LATER
-If there’s anything statisticians love to talk about its hypothesis testing. In this post, we will talk about everything you need to get started with hypothesis testing. There are a lot of rules and terminilogy to keep in mind while doing it but it’s going to be easy when we break it down into smaller parts.
-This blogpost is meant for people getting started with statistics.</description>
+      <description>There’s two main branches of statistics. One, where we collect and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. Hypothesis testing is one way to make that inference and so it is called inferential statistics. It can be confusing because there are endless terminilogies and rules to keep in mind but we can tackle it by breaking it down into smaller parts.</description>
     </item>
     
     <item>
