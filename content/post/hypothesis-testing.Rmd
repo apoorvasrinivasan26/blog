@@ -145,6 +145,8 @@ _but what does setting a significance level mean?_
 It represents our tolerance for type 1 error. It's usually repesented by $\alpha$. Ideally, we want to choose a significance level that minimizes the likelihood of one of these errors.i.e. a very small significance level. Significance levels such as 0.05 and 0.01 are common in most fields.
 
 
+
+
 ### 4) state the form of the test statistic and its null distribution
 
 
@@ -159,6 +161,7 @@ Another important part of any hypothesis test is the __decision rule__. The deci
 
 The range of values over which we do not reject H0 is called the __acceptance region__. The range of values over which we reject H0 is called the __rejection region__. The number that divides the acceptance and rejection regions is called the __critical value__.
 
+_A critical value is a point (or points) on the scale of the test statistic beyond which we reject the null hypothesis, and, is derived from the level of significance α of the test. Critical value can tell us, what is the probability of two sample means belonging to the same distribution. Higher, the critical value means lower the probability of two samples belonging to same distribution. The general critical value for a two-tailed test is 1.96, which is based on the fact that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean._
   
 <img src="/post/hypothesis-testing_files/one_sided_curve.png" alt="final image" width="800" class="center"/>
 
