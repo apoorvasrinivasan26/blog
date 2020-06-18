@@ -1,5 +1,5 @@
 ---
-title: an attempt at bayesian hypothesis testing
+title: an attempt at bayesian hypothesis testing without tears
 author: ''
 date: '2020-06-12'
 slug: an-attempt-at-bayesian-hypothesis-testing
