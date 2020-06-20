@@ -14,4 +14,171 @@ description: ''
 
 
 
+<pre class="r"><code>shotData&lt;- c(1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0,
+             1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1,
+             0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+             1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0)
 
+#figure 1 from blog, likelihood curve for 58/100 shots
+
+x = seq(.001, .999, .001) ##Set up for creating the distributions
+y2 = dbeta(x, 1 + 58, 1 + 42) # data for likelihood curve, plotted as the posterior from a beta(1,1)
+
+plot(x, y2, xlim=c(0,1), ylim=c(0, 1.25 * max(y2,1.6)), type = &quot;l&quot;, ylab= &quot;Density&quot;, lty = 3,
+     xlab= &quot;Probability of success&quot;, las=1, main=&quot;Likelihood Curve for 3-pt Shots&quot;, sub= &quot;(Binomial Data, 58/100)&quot;,lwd=2,
+     cex.lab=1.5, cex.main=1.5, col = &quot;darkorange&quot;, axes=FALSE)
+axis(1, at = seq(0,1,.2)) #adds custom x axis
+axis(2, las=1) # custom y axis</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>## Function for plotting priors, likelihoods, and posteriors for binomial data
+## Output consists of a plot and various statistics
+## PS and PF determine the shape of the prior distribution.
+## PS = prior success, PF = prior failure for beta dist. 
+## PS = 1, PF = 1 corresponds to uniform(0,1) and is default. If left at default, posterior will be equivalent to likelihood
+## k = number of observed successes in the data, n = total trials. If left at 0 only plots the prior dist.
+## null = Is there a point-null hypothesis? null = NULL leaves it out of plots and calcs
+## CI = Is there a relevant X% credibility interval? .95 is recommended and standard
+
+plot.beta &lt;- function(PS = 1, PF = 1, k = 0, n = 0, null = NULL, CI = NULL, ymax = &quot;auto&quot;, main = NULL) {
+        
+        x = seq(.001, .999, .001) ##Set up for creating the distributions
+        y1 = dbeta(x, PS, PF) # data for prior curve
+        y3 = dbeta(x, PS + k, PF + n - k) # data for posterior curve
+        y2 = dbeta(x, 1 + k, 1 + n - k) # data for likelihood curve, plotted as the posterior from a beta(1,1)
+        
+        if(is.numeric(ymax) == T){ ##you can specify the y-axis maximum
+                y.max = ymax
+        }        
+        else(
+                y.max = 1.25 * max(y1,y2,y3,1.6) ##or you can let it auto-select
+        )
+        
+        if(is.character(main) == T){
+                Title = main
+        }
+        else(
+                Title = &quot;Prior-to-Posterior Transformation with Binomial Data&quot;
+        )
+        
+        
+        plot(x, y1, xlim=c(0,1), ylim=c(0, y.max), type = &quot;l&quot;, ylab= &quot;Density&quot;, lty = 2,
+             xlab= &quot;Probability of success&quot;, las=1, main= Title,lwd=3,
+             cex.lab=1.5, cex.main=1.5, col = &quot;skyblue&quot;, axes=FALSE)
+        
+        axis(1, at = seq(0,1,.2)) #adds custom x axis
+        axis(2, las=1) # custom y axis
+        
+        
+        
+        if(n != 0){
+                #if there is new data, plot likelihood and posterior
+                lines(x, y2, type = &quot;l&quot;, col = &quot;darkorange&quot;, lwd = 2, lty = 3)
+                lines(x, y3, type = &quot;l&quot;, col = &quot;darkorchid1&quot;, lwd = 5)
+                legend(&quot;topleft&quot;, c(&quot;Prior&quot;, &quot;Posterior&quot;, &quot;Likelihood&quot;), col = c(&quot;skyblue&quot;, &quot;darkorchid1&quot;, &quot;darkorange&quot;), 
+                       lty = c(2,1,3), lwd = c(3,5,2), bty = &quot;n&quot;, y.intersp = .55, x.intersp = .1, seg.len=.7)
+                
+                ## adds null points on prior and posterior curve if null is specified and there is new data
+                if(is.numeric(null) == T){
+                        ## Adds points on the distributions at the null value if there is one and if there is new data
+                        points(null, dbeta(null, PS, PF), pch = 21, bg = &quot;blue&quot;, cex = 1.5)
+                        points(null, dbeta(null, PS + k, PF + n - k), pch = 21, bg = &quot;darkorchid&quot;, cex = 1.5)
+                        abline(v=null, lty = 5, lwd = 1, col = &quot;grey73&quot;)
+                        ##lines(c(null,null),c(0,1.11*max(y1,y3,1.6))) other option for null line
+                }
+        }
+        
+        ##Specified CI% but no null? Calc and report only CI
+        if(is.numeric(CI) == T &amp;&amp; is.numeric(null) == F){
+                CI.low &lt;- qbeta((1-CI)/2, PS + k, PF + n - k)
+                CI.high &lt;- qbeta(1-(1-CI)/2, PS + k, PF + n - k)
+                
+                SEQlow&lt;-seq(0, CI.low, .001)
+                SEQhigh &lt;- seq(CI.high, 1, .001)
+                ##Adds shaded area for x% Posterior CIs
+                cord.x &lt;- c(0, SEQlow, CI.low) ##set up for shading
+                cord.y &lt;- c(0,dbeta(SEQlow,PS + k, PF + n - k),0) ##set up for shading
+                polygon(cord.x,cord.y,col=&#39;orchid&#39;, lty= 3) ##shade left tail
+                cord.xx &lt;- c(CI.high, SEQhigh,1) 
+                cord.yy &lt;- c(0,dbeta(SEQhigh,PS + k, PF + n - k), 0)
+                polygon(cord.xx,cord.yy,col=&#39;orchid&#39;, lty=3) ##shade right tail
+                
+                return( list( &quot;Posterior CI lower&quot; = round(CI.low,3), &quot;Posterior CI upper&quot; = round(CI.high,3)))
+        }
+        
+        ##Specified null but not CI%? Calculate and report BF only 
+        if(is.numeric(null) == T &amp;&amp; is.numeric(CI) == F){
+                null.H0 &lt;- dbeta(null, PS, PF)
+                null.H1 &lt;- dbeta(null, PS + k, PF + n - k)
+                CI.low &lt;- qbeta((1-CI)/2, PS + k, PF + n - k)
+                CI.high &lt;- qbeta(1-(1-CI)/2, PS + k, PF + n - k)
+                return( list(&quot;BF01 (in favor of H0)&quot; = round(null.H1/null.H0,3), &quot;BF10 (in favor of H1)&quot; = round(null.H0/null.H1,3)
+                ))
+        }
+        
+        ##Specified both null and CI%? Calculate and report both
+        if(is.numeric(null) == T &amp;&amp; is.numeric(CI) == T){
+                null.H0 &lt;- dbeta(null, PS, PF)
+                null.H1 &lt;- dbeta(null, PS + k, PF + n - k)
+                CI.low &lt;- qbeta((1-CI)/2, PS + k, PF + n - k)
+                CI.high &lt;- qbeta(1-(1-CI)/2, PS + k, PF + n - k)
+                
+                SEQlow&lt;-seq(0, CI.low, .001)
+                SEQhigh &lt;- seq(CI.high, 1, .001)
+                ##Adds shaded area for x% Posterior CIs
+                cord.x &lt;- c(0, SEQlow, CI.low) ##set up for shading
+                cord.y &lt;- c(0,dbeta(SEQlow,PS + k, PF + n - k),0) ##set up for shading
+                polygon(cord.x,cord.y,col=&#39;orchid&#39;, lty= 3) ##shade left tail
+                cord.xx &lt;- c(CI.high, SEQhigh,1) 
+                cord.yy &lt;- c(0,dbeta(SEQhigh,PS + k, PF + n - k), 0)
+                polygon(cord.xx,cord.yy,col=&#39;orchid&#39;, lty=3) ##shade right tail
+                
+                return( list(&quot;BF01 (in favor of H0)&quot; = round(null.H1/null.H0,3), &quot;BF10 (in favor of H1)&quot; = round(null.H0/null.H1,3),
+                             &quot;Posterior CI lower&quot; = round(CI.low,3), &quot;Posterior CI upper&quot; = round(CI.high,3)))
+        }
+        
+}
+
+#plot dimensions (415,550) for the blog figures
+
+#Initial Priors
+plot.beta(1,1,ymax=3.2,main=&quot;Uniform Prior, Beta(1,1)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre class="r"><code>plot.beta(.5,.5,ymax=3.2,main=&quot;Jeffreys&#39;s Prior, Beta(1/2,1/2)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<pre class="r"><code>plot.beta(4,9,ymax=3.2,main=&quot;Informed Prior, Beta(4,9)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+<pre class="r"><code>#Posteriors after Round 1
+plot.beta(1,1,13,25,main=&quot;Beta(1,1) to Beta(14,13)&quot;,ymax=10)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+<pre class="r"><code>plot.beta(.5,.5,13,25,main=&quot;Beta(1/2,1/2) to Beta(13.5,12.5)&quot;,ymax=10)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+<pre class="r"><code>plot.beta(4,9,13,25,main=&quot;Beta(4,9) to Beta(17,21)&quot;,ymax=10)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+<pre class="r"><code>#Posteriors after Round 2
+plot.beta(14,13,12,25,ymax=10,main=&quot;Beta(14,13) to Beta(26,26)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+<pre class="r"><code>plot.beta(13.5,12.5,12,25,ymax=10,main=&quot;Beta(13.5,12.5) to Beta(25.5,25.5)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+<pre class="r"><code>plot.beta(17,21,12,25,ymax=10,main=&quot;Beta(17,21) to Beta(29,34)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+<pre class="r"><code>#Posteriors after Round 3
+plot.beta(26,26,14,25,ymax=10,main=&quot;Beta(26,26) to Beta(40,37)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
+<pre class="r"><code>plot.beta(25.5,25.5,14,25,ymax=10,main=&quot;Beta(25.5,25.5) to Beta(39.5,36.5)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-12.png" width="672" /></p>
+<pre class="r"><code>plot.beta(29,34,14,25,ymax=10,main=&quot;Beta(29,34) to Beta(43,45)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-13.png" width="672" /></p>
+<pre class="r"><code>#Posteriors after Round 4
+plot.beta(40,37,19,25,ymax=10,main=&quot;Beta(40,37) to Beta(59,43)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-14.png" width="672" /></p>
+<pre class="r"><code>plot.beta(39.5,36.5,19,25,ymax=10,main=&quot;Beta(39.5,36.5) to Beta(58.5,42.5)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-15.png" width="672" /></p>
+<pre class="r"><code>plot.beta(43,45,19,25,ymax=10,main=&quot;Beta(43,45) to Beta(62,51)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-16.png" width="672" /></p>
+<pre class="r"><code>#Initial Priors and final Posteriors after all rounds at once
+plot.beta(1,1,58,100,ymax=10,main=&quot;Beta(1,1) to Beta(59,43)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-17.png" width="672" /></p>
+<pre class="r"><code>plot.beta(.5,.5,58,100,ymax=10,main=&quot;Beta(1/2,1/2) to Beta(58.5,42.5)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-18.png" width="672" /></p>
+<pre class="r"><code>plot.beta(4,9,58,100,ymax=10,main=&quot;Beta(4,9) to Beta(62,51)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-1-19.png" width="672" /></p>

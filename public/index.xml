@@ -18,7 +18,7 @@
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/an-attempt-at-bayesian-hypothesis-testing/</guid>
-      <description></description>
+      <description>shotData&amp;lt;- c(1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0) #figure 1 from blog, likelihood curve for 58/100 shots x = seq(.</description>
     </item>
     
     <item>
