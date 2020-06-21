@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>an attempt at bayesian hypothesis testing without tears</title>
+      <title>getting started with bayesian inference</title>
       <link>/post/an-attempt-at-bayesian-hypothesis-testing/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/an-attempt-at-bayesian-hypothesis-testing/</guid>
-      <description>shotData&amp;lt;- c(1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0) #figure 1 from blog, likelihood curve for 58/100 shots x = seq(.</description>
+      <description>In our previous post, we spoke about hypothesis testing from a frequentist perspective. Today, we will talk about</description>
     </item>
     
   </channel>
