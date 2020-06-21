@@ -2,7 +2,7 @@
 title: getting started with bayesian inference
 author: ''
 date: '2020-06-12'
-slug: an-attempt-at-bayesian-hypothesis-testing
+slug: getting-started-with-bayesian-inference
 categories:
   - statistics
 tags:
@@ -11,10 +11,6 @@ tags:
   - bayesian
 description: ''
 ---
-
-
-
-
 
 
 
