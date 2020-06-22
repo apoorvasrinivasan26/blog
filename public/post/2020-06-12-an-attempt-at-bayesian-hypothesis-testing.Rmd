@@ -166,7 +166,7 @@ the flu, in general, is only 5%.
 $P(flu/symptoms) =\dfrac {P(symptoms/flu)P(flu)}{P(symptoms)}$
 
 $P(flu)$ = 0.05
-$P(symptoms/flu)$ = 0.9
+
 
 
 
