@@ -14,5 +14,48 @@ description: ''
 
 
 
-<p>In our previous post, we spoke about hypothesis testing from a frequentist perspective.
-Today, we will talk about</p>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<pre class="r"><code>shotData&lt;- c(1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0,
+             1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1,
+             0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+             1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0)</code></pre>
+<p>Last week, we spoke about hypothesis testing from a frequentist perspective.
+Today, we’re going to explore another way of statistics called bayesian statistics. Bayesian statistics simply makes inferences based on bayes theorem.</p>
+<p>Assumes prior knowledge on conditional, marginal and random variable concepts.</p>
+<p>Mathematical definition of bayes: <span class="math inline">\(P(A/B) = \dfrac {P(B/A)P(A)}{P(B)}\)</span></p>
+<p><span class="math inline">\(posterior = \dfrac {prior * likelihood} {marginal \hspace{0.2cm} likelihood}\)</span></p>
+<p>There are three main ingredients required for bayesian analysis:</p>
+<ol style="list-style-type: decimal">
+<li>Prior</li>
+<li>Likelihood</li>
+<li>Posterior</li>
+</ol>
+<p>Let’s start with an example:</p>
+<p>Let’s say you have a headache and sore throat, and you know that some people in the office you work at have also had the flu. Does this mean you have the flu?</p>
+<p>Wanting to gain a little more information you roll over, grab your phone
+and search Google. You find a reputable article that says that only 5% of the
+population will get the flu in a given year. Ok. So, the probability of having
+the flu, in general, is only 5%.</p>
+<p><span class="math inline">\(P(flu/symptoms) =\dfrac {P(symptoms/flu)P(flu)}{P(symptoms)}\)</span></p>
+<p><span class="math inline">\(P(flu)\)</span> = 0.05
+<span class="math inline">\(P(symptoms/flu)\)</span> = 0.9</p>
+<div id="prior" class="section level3">
+<h3>prior</h3>
+<p>The first ingredient is the background knowledge on the parameters of the model being tested. This refers to the knowledge available <em>before</em> seeing the data.</p>
+<p>Let’s assume you don’t know anything about the prevalence of flu. So you’ll probably pick a prior where all probabilities are equally likely. It will look something like this</p>
+<p><plot the prior plot></p>
+<pre class="r"><code>plot.beta(1,1,ymax=3.2,main=&quot;Uniform Prior, Beta(1,1)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Wanting to gain a little more information you roll over, grab your phone
+and search Google. You find a reputable article that says that only 5% of the
+population will get the flu in a given year. But another article says that the prevalence could be a little higher. In this case a distribution of our prior belief might be more appropriate to incorporate our uncertainity. This distribution is known as the <strong>prior distribution</strong>.</p>
+<p><plot another prior dist></p>
+<pre class="r"><code>plot.beta(4,9,ymax=3.2,main=&quot;Informed Prior, Beta(4,9)&quot;)</code></pre>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="likelihood" class="section level3">
+<h3>Likelihood</h3>
+<p>The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. This makes likelihood the workhorse of bayesian inference.</p>
+</div>
