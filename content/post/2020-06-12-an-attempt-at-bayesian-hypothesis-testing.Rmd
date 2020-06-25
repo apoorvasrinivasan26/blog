@@ -19,6 +19,8 @@ description: ''
 
 
 
+THIS BLOGPOST IS STILL UNDER CONSTRUCTION. PLEASE CHECK BACK LATER
+
 ```{r}
 shotData<- c(1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0,
              1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1,
