@@ -51,10 +51,9 @@ bayesian,
 />
 <meta
   name="twitter:description"
-  content="In my previous post, we spoke about hypothesis testing from a frequentist perspective. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.
+  content="In my previous post, we spoke about hypothesis testing from a frequentist perspective. If you took a stats class, that is the method you probably learn. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.
 My goal in this blogpost is to break down the basics of bayesian inference.
-This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.
-bayes theorem Before getting into the inference, let’s take a moment to talk about bayes theorem.|"
+This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.|"
 />
 <meta name="twitter:image:src" content="" />
 <meta name="twitter:domain" content="/post/getting-started-with-bayesian-inference/" />
@@ -128,14 +127,16 @@ if (!doNotTrack) {
 <script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<p><a href="https://apoorvasrinivasanblog.com/post/hypothesis-testing/">In my previous post</a>, we spoke about hypothesis testing from a frequentist perspective. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.</p>
+<p><a href="https://apoorvasrinivasanblog.com/post/hypothesis-testing/">In my previous post</a>, we spoke about hypothesis testing from a frequentist perspective. If you took a stats class, that is the method you probably learn. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.</p>
 <p>My goal in this blogpost is to break down the basics of bayesian inference.</p>
 <p>This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.</p>
+<div id="why-go-bayes" class="section level3">
+<h3>why go bayes?</h3>
+<p>there’s tons of material on this by poeple</p>
 <div id="bayes-theorem" class="section level4">
 <h4>bayes theorem</h4>
 <p>Before getting into the inference, let’s take a moment to talk about bayes theorem. As one of the most popular formula in statistics, it needs no introduction but it may be helpful to state it here again.</p>
 <p>Mathematical definition of bayes: <span class="math inline">\(P(A/B) = \dfrac {P(B/A)P(A)}{P(B)}\)</span></p>
-<p>The key difference between Bayesian statistical inference and frequentist (e.g., ML estimation) statistical methods concerns the nature of the unknown parameters. In the frequentist framework, a parameter of interest is assumed to be unknown, but fixed. That is, it is assumed that in the population there is only one true population parameter, for example, one true mean or one true regression coefficient. In the Bayesian view of subjective probability, all unknown parameters are treated as uncertain and therefore should be described by a probability distribution</p>
 <p>There are three main ingredients to bayesian hypothesis:
 1) Prior
 2) Likelihood
@@ -144,10 +145,12 @@ if (!doNotTrack) {
 <p><span class="math inline">\(posterior = \dfrac {prior * likelihood} {marginal \hspace{0.2cm} likelihood}\)</span></p>
 <p>Let’s start with an example:</p>
 <p>Let’s say you have a headache and sore throat, and you know that some people in the office you work at have also had the flu. Does this mean you have the flu? Let’s find out if bayesian inference can help us figure it out.</p>
+<p>Putting our problem in mathematical terms, it looks like this:</p>
 <p><span class="math inline">\(P(flu| symptoms) = \dfrac {P(symptoms| flu) * P(flu)} {P(symptoms)}\)</span></p>
 </div>
+</div>
 <div id="prior" class="section level1">
-<h1>Prior</h1>
+<h1>prior</h1>
 <p>The first ingredient is the background knowledge on the parameters of the model being tested. This refers to the knowledge available <em>before</em> seeing the data.</p>
 <p>Let’s assume you don’t know anything about the prevalence of flu. So you’ll probably pick a prior where all probabilities are equally likely. It will look something like this</p>
 <p><plot the prior plot></p>
@@ -160,11 +163,11 @@ population will get the flu in a given year. But another article says that the p
 <pre class="r"><code>plot.beta(12,88,ymax=15,main=&quot;Informed Prior, Beta(12, 88)&quot;)</code></pre>
 <p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>📝
-In Bayesian inference, the beta distribution is the conjugate prior probability distribution for the binomial distribution. Computing a posterior using a conjugate prior is very convenient, because you can avoid expensive numerical computation involved in Bayesian Inference. You can learn more about conjugate priors here(add link)</p>
+In Bayesian inference, the beta distribution is the conjugate prior probability distribution for the binomial distribution. Computing a posterior using a conjugate prior is very convenient, because you can avoid expensive numerical computation. You can learn more about conjugate priors here(add link)</p>
 </div>
 <div id="likelihood" class="section level1">
 <h1>likelihood</h1>
-<p>The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the one that does all the work in bayesian inference. It is also coincidentally the trickiest to understand among the three.</p>
+<p>The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the one that does all the work in bayesian inference. It is also one of the trickier concepts to understand in one shot.</p>
 <p>Lets say you go out and collect data from 100 of your colleagues and 30 of them are showing symptoms. The likelihood curve wil look like this:</p>
 <pre class="r"><code>x = seq(.001, .999, .001) ##Set up for creating the distributions
 y2 = dbeta(x, 1 + 30, 1 + 70) # data for likelihood curve, plotted as the posterior from a beta(1,1)
@@ -175,29 +178,34 @@ plot(x, y2, xlim=c(0,1), ylim=c(0, 1.25 * max(y2,1.6)), type = &quot;l&quot;, yl
 axis(1, at = seq(0,1,.2)) #adds custom x axis
 axis(2, las=1) # custom y axis</code></pre>
 <p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. This means that</p>
+<p>The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. In other words, facets of the data that do not factor into the likelihood function are irrelevant to the evaluation of the strength of the statistical evidence. Likelihood distribution is the curve that best fits the data we’re given.</p>
 </div>
 <div id="is-likelihood-a-probability" class="section level1">
 <h1>is likelihood a probability?</h1>
 <p>Likelihood is not a probability, but it’s proportional to it.</p>
-<p>The likelihood of a hypothesis (H) given some data (D) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K). In other words, L(H|D)=P(D|H)</p>
+<p>The likelihood of a hypothesis (H) given some data (D) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K).</p>
 <p>Since a likelihood isn’t actually a probability it doesn’t obey various rules of probability. For example, likelihood need not sum to 1.</p>
-<p>A critical difference between probability and likelihood is in the interpretation of what is fixed and what can vary. In the case of a conditional probability, P(D|H), the hypothesis is fixed and the data are free to vary. Likelihood, however, is the opposite. The likelihood of a hypothesis, L(H|D), conditions on the data as if they are fixed while allowing the hypotheses to vary.</p>
-<p>The distinction is subtle, so it is worth repeating. For likelihood, the data are a given and the hypotheses vary. For probability, the hypotheses is fixed and the data vary.</p>
-<p>Tying that to our example, it means the P(symptoms|flu).</p>
+<p>A critical difference between probability and likelihood is in the interpretation of what is fixed and what can vary. The distinction is subtle, so pay close attention. For the conditional probability, the hypotheses is fixed and the data vary. For likelihood, the data are a given and the hypotheses vary.</p>
 </div>
 <div id="posterior" class="section level1">
-<h1>Posterior</h1>
+<h1>posterior</h1>
 <p>Now for the easiest part. Getting the posterior distribution. This is the distribution representing our belief about the parameter values after we have calculated everything on the right hand side taking the observed data into account.</p>
+<p><span class="math inline">\(Posterior \propto Prior * Likelihood\)</span></p>
+<div id="why-did-we-ignore-the-demonimator" class="section level3">
+<h3>why did we ignore the demonimator?</h3>
+<p>Well, apart from being the marginal distribution of the data it doesn’t really have a fancy name, although it’s sometimes referred to as the evidence. Remember, we’re only interested in the parameter values but P(data) doesn’t have any reference to them. In fact, P(data) doesn’t even evaluate to a distribution. It’s just a number. we’ve already observed the data so we can calculate P(data). In general, it turns out that calculating P(data) is very hard and so many methods exist to calculate it.</p>
+<p>The reason why P(data) is useful is because the number that comes out is a normalising constant. One of the necessary conditions for a probability distribution is that the sum of all possible outcomes of an event is equal to 1. The normalising constant makes sure that the resulting posterior distribution is a true probability distribution by ensuring that the sum of the distribution (I should really say integral because it’s usually a continuous distribution) is equal to 1.</p>
 <p>Coming back to our example, so far we have two distributions: prior and likelihood. We can get the posterior by multiplying the two. The resulting distribution is shown below</p>
 <pre class="r"><code>#Initial Priors and final Posteriors after all rounds at once
 
 #par(mfrow=c(1,2))
 plot.beta(1,1,30,100,ymax=10,main=&quot;Beta(1,1) to Beta(59,43)&quot;)</code></pre>
 <p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>With the uniform prior, the posterior falls right on top of the likelihood function. In the plot above, the likelihood is nearly invisible because the posterior sits right on top of it. When the prior has only 1 or 2 data points worth of information, it has essentially no impact on the posterior shape</p>
 <pre class="r"><code>plot.beta(12,88,30,100,ymax=15,main=&quot;Beta(12,88) to Beta(30,70)&quot;)</code></pre>
-<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
-<p>It looks like the probability of you having the flu based on the data you’ve collected is about 20% which is slightly higher than the prior.</p>
+<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>The second plot above shows how the posterior splits the difference between the likelihood and the informed prior .My takeaway is that the the probability of having the flu based on the data you’ve collected is about 20% which is slightly higher than the prior.</p>
+</div>
 </div>
 
       </article>

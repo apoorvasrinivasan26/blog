@@ -18,10 +18,9 @@
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/getting-started-with-bayesian-inference/</guid>
-      <description>In my previous post, we spoke about hypothesis testing from a frequentist perspective. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.
+      <description>In my previous post, we spoke about hypothesis testing from a frequentist perspective. If you took a stats class, that is the method you probably learn. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.
 My goal in this blogpost is to break down the basics of bayesian inference.
-This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.
-bayes theorem Before getting into the inference, let’s take a moment to talk about bayes theorem.</description>
+This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.</description>
     </item>
     
   </channel>
