@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/bayesian/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,13 @@
     <item>
       <title>getting started with bayesian inference</title>
       <link>/post/getting-started-with-bayesian-inference/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/getting-started-with-bayesian-inference/</guid>
-      <description>shotData&amp;lt;- c(1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0) Last week, we spoke about hypothesis testing from a frequentist perspective.</description>
+      <description>In my previous post, we spoke about hypothesis testing from a frequentist perspective. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.
+My goal in this blogpost is to break down the basics of bayesian inference.
+This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.
+bayes theorem Before getting into the inference, let’s take a moment to talk about bayes theorem.</description>
     </item>
     
   </channel>
