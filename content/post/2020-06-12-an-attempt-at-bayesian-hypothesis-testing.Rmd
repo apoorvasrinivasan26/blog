@@ -137,30 +137,29 @@ plot.beta <- function(PS = 1, PF = 1, k = 0, n = 0, null = NULL, CI = NULL, ymax
 
 
 
-[In my previous post](https://apoorvasrinivasanblog.com/post/hypothesis-testing/), we spoke about hypothesis testing from a frequentist perspective. If you took a stats class, that is the method you probably learn. There is another, arguably better method to conduct a hypothesis testing and that using bayesian inference.
+[In my previous post](https://apoorvasrinivasanblog.com/post/hypothesis-testing/), we spoke about hypothesis testing from a frequentist perspective. This is the method that is commonly taught in STAT101 classes. But for many decades, some statisticians have argued for another approach to conduct statistical analysis based on bayes theorem.
 
 
-My goal in this blogpost is to break down the basics of bayesian inference.
-
-This blogpost assumes prior knowledge on conditional, marginal and random variable concepts.
+As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I've learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you're familiar with frequentist methods.
 
 
-### why go bayes?
+## why go bayes?
 
-there's tons of material on this by poeple 
+There's tons of material on this by poeple more qualified than me, but the way I see it bayesian methods strays away from the rote and recipe like manner used in frequentist methods and is based on intuition. It produces clear and direct inferences while making use of all available information. Most importantly, using frequentist methods ensues endless arguments about everything(choice of data model, stopping rule, tests, etc.) while in bayesian, you will probably argue about just one thing (prior)
 
-#### bayes theorem
+## model from baye's theorem
 
-Before getting into the inference, let's take a moment to talk about bayes theorem. As one of the most popular formula in statistics, it needs no introduction but it may be helpful to state it here again.
+As one of the most popular theorems in statistics, you've must've already seen baye's theorem. Putting it in a model form:
 
-Mathematical definition of bayes: $P(A/B) = \dfrac {P(B/A)P(A)}{P(B)}$
+$P( \theta /data) = \dfrac {P(data/\theta)P(\theta)}{P(data)}$
 
 
 
 There are three main ingredients to bayesian hypothesis:
-1) Prior
-2) Likelihood
-3) Posterior
+
+* Prior
+* Likelihood
+* Posterior
 
 They can be put together into the bayes theorem as shown:
 
@@ -181,7 +180,7 @@ $P(flu| symptoms) = \dfrac {P(symptoms| flu) * P(flu)} {P(symptoms)}$
 The first ingredient is the background knowledge on the parameters of the model being tested. This refers to the knowledge available _before_ seeing the data. 
 
 
-Let's assume you don't know anything about the prevalence of flu. So you'll probably pick a prior where all probabilities are equally likely.  It will look something like this
+Let's assume you don't know anything about the prevalence of flu. So you'll probably pick a prior where all probabilities are equally likely. This is called an __uninformed prior__ and it looks something like the plot below
 
 <plot the prior plot>
 
@@ -192,7 +191,7 @@ plot.beta(1,1,ymax=3.2,main="Uniform Prior, Beta(1,1)")
 
 Wanting to gain a little more information you roll over, grab your phone
 and search Google. You find an article that says that only 12% of the
-population will get the flu in a given year. But another article says that the prevalence could be a little higher. In this case a distribution of our prior belief might be more appropriate to incorporate our uncertainity. This distribution is known as the __prior distribution__. 
+population will get the flu in a given year. But another article says that the prevalence could be a little higher. In this case a distribution of our prior belief might be more appropriate to incorporate our uncertainity. This distribution is known as the __prior distribution__. In particular, this is called an __informed prior__ distribution because you are incorporating your previous beliefs in the model
 
 <plot another prior dist>
 
@@ -203,12 +202,12 @@ plot.beta(12,88,ymax=15,main="Informed Prior, Beta(12, 88)")
 
 
 :pencil:
-In Bayesian inference, the beta distribution is the conjugate prior probability distribution for the binomial distribution. Computing a posterior using a conjugate prior is very convenient, because you can avoid expensive numerical computation. You can learn more about conjugate priors here(add link)
+In Bayesian inference, the beta distribution is the conjugate prior probability distribution for the binomial distribution. Computing a posterior using a conjugate prior is very convenient, because you can avoid expensive numerical computation. You can learn more about conjugate priors [here](https://towardsdatascience.com/conjugate-prior-explained-75957dc80bfb)
 
 
 # likelihood
 
-The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the one that does all the work in bayesian inference. It is also one of the trickier concepts to understand in one shot.
+The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the workhorse of bayesian inference. This also appears prominently in frequentist methods.
 
 Lets say you go out and collect data from 100 of your colleagues and 30 of them are showing symptoms. The likelihood curve wil look like this:
 
@@ -227,11 +226,11 @@ axis(2, las=1) # custom y axis
 ```
 
 
-The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. In other words, facets of the data that do not factor into the likelihood function are irrelevant to the evaluation of the strength of the statistical evidence. Likelihood distribution is the curve that best fits the data we're given.
+The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. In other words, facets of the data that do not factor into the likelihood function are irrelevant to the evaluation of the strength of the statistical evidence. The likelihood function is the most compact summary of the data that does not loose information. 
 
 
 
-# is likelihood a probability?
+### is likelihood a probability?
 
 Likelihood is not a probability, but it's proportional to it. 
 
@@ -250,11 +249,9 @@ Now for the easiest part. Getting the posterior distribution. This is the distri
 
 $Posterior \propto Prior * Likelihood$
 
-### why did we ignore the demonimator?
+### wait, why did we ignore the demonimator?
 
-Well, apart from being the marginal distribution of the data it doesn’t really have a fancy name, although it’s sometimes referred to as the evidence. Remember, we’re only interested in the parameter values but P(data) doesn’t have any reference to them. In fact, P(data) doesn’t even evaluate to a distribution. It’s just a number. we’ve already observed the data so we can calculate P(data). In general, it turns out that calculating P(data) is very hard and so many methods exist to calculate it. 
-
-The reason why P(data) is useful is because the number that comes out is a normalising constant. One of the necessary conditions for a probability distribution is that the sum of all possible outcomes of an event is equal to 1. The normalising constant makes sure that the resulting posterior distribution is a true probability distribution by ensuring that the sum of the distribution (I should really say integral because it’s usually a continuous distribution) is equal to 1.
+Sometimes also called as the evidence, P(data) is simply just a constant, particularly it is a normalizing constant. You've already observed the data so you can calculate P(data). One of the necessary conditions for a probability distribution is that the sum of all possible outcomes of an event is equal to 1. The normalising constant makes sure that the resulting posterior distribution is a true probability distribution by ensuring that the sum or integral of the distribution  is equal to 1.
 
 
 Coming back to our example, so far we have two distributions: prior and likelihood. We can get the posterior by multiplying the two. The resulting distribution is shown below
@@ -274,6 +271,18 @@ With the uniform prior, the posterior falls right on top of the likelihood funct
 plot.beta(12,88,30,100,ymax=15,main="Beta(12,88) to Beta(30,70)")
 ```
 
-The second plot above shows how the posterior splits the difference between the likelihood and the informed prior .My takeaway is that the the probability of  having the flu based on the data you've collected is about 20% which is slightly higher than the  prior.
+The second plot above shows how the posterior splits the difference between the likelihood and the informed prior. My takeaway is that the the probability of  having the flu based on the data you've collected is about 20% which is slightly higher than the  prior.
 
+Now we have the posterior distribution, we can derive statistics from it. For example, we could use the expected value of the distribution. Or we could calculate the variance to quantify our uncertainty about our conclusion. One of the most common statistics calculated from the posterior distribution is the mode. This is often used as the estimate of the true value for the parameter of interest and is known as the Maximum a posteriori probability estimate or simply, the MAP estimate. But that's for another time
+
+# final thoughts
+
+While there are several advantages of bayesian analysis, it is not without objections. Andrew Gelman discusses some of them in this [excellent paper](http://www.stat.columbia.edu/~gelman/research/published/badbayesmain.pdf). My personal take is that it in the best interest of the statistician to be knowledgable in both these methods to be able to see through critiques and defences of both
+
+# further reading:
+
+* [doing bayesian data analysis](https://www.amazon.com/Doing-Bayesian-Data-Analysis-Tutorial/dp/0123814855)
+* [a gentle introduction to bayesian analysis](https://srcd.onlinelibrary.wiley.com/doi/pdf/10.1111/cdev.12169)
+* [interactive bayesian inference](https://rpsychologist.com/d3/bayes/)
+* [bayesian versus frequentist inference](https://www.ejwagenmakers.com/2008/BayesFreqBook.pdf)
 
