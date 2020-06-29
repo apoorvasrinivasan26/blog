@@ -27,6 +27,7 @@ description: ''
 <h2>model from baye’s theorem</h2>
 <p>As one of the most popular theorems in statistics, you’ve must’ve already seen baye’s theorem. Putting it in a model form:</p>
 <p><span class="math inline">\(P( \theta /data) = \dfrac {P(data/\theta)P(\theta)}{P(data)}\)</span></p>
+<p>where <span class="math inline">\(\theta\)</span> is your hypothesis</p>
 <p>There are three main ingredients to bayesian hypothesis:</p>
 <ul>
 <li>Prior</li>
@@ -73,7 +74,7 @@ axis(2, las=1) # custom y axis</code></pre>
 <div id="is-likelihood-a-probability" class="section level3">
 <h3>is likelihood a probability?</h3>
 <p>Likelihood is not a probability, but it’s proportional to it.</p>
-<p>The likelihood of a hypothesis (H) given some data (D) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K).</p>
+<p>The likelihood of a hypothesis (<span class="math inline">\(\theta\)</span>) given some data (Data) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K).</p>
 <p>Since a likelihood isn’t actually a probability it doesn’t obey various rules of probability. For example, likelihood need not sum to 1.</p>
 <p>A critical difference between probability and likelihood is in the interpretation of what is fixed and what can vary. The distinction is subtle, so pay close attention. For the conditional probability, the hypotheses is fixed and the data vary. For likelihood, the data are a given and the hypotheses vary.</p>
 </div>
@@ -97,7 +98,7 @@ axis(2, las=1) # custom y axis</code></pre>
 </div>
 <div id="final-thoughts" class="section level1">
 <h1>final thoughts</h1>
-<p>While there are several advantages of bayesian analysis, it is not without objections. Andrew Gelman discusses some of them in this <a href="http://www.stat.columbia.edu/~gelman/research/published/badbayesmain.pdf">excellent paper</a>. My personal take is that it in the best interest of the statistician to be knowledgable in both these methods to be able to see through critiques and defences of both</p>
+<p>While there are several advantages of bayesian analysis, it is not without objections. Andrew Gelman discusses some of them in this <a href="http://www.stat.columbia.edu/~gelman/research/published/badbayesmain.pdf">excellent paper</a>. My personal take is that it in the best interest of the statistician to be knowledgable in both these methods to be able to see through critiques and defences of both these methods</p>
 </div>
 <div id="further-reading" class="section level1">
 <h1>further reading:</h1>

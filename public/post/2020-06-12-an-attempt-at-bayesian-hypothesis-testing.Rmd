@@ -153,7 +153,7 @@ As one of the most popular theorems in statistics, you've must've already seen b
 
 $P( \theta /data) = \dfrac {P(data/\theta)P(\theta)}{P(data)}$
 
-
+where $\theta$ is your hypothesis
 
 There are three main ingredients to bayesian hypothesis:
 
@@ -234,7 +234,7 @@ The Likelihood Principle states that the likelihood function contains all of the
 
 Likelihood is not a probability, but it's proportional to it. 
 
-The likelihood of a hypothesis (H) given some data (D) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K).
+The likelihood of a hypothesis ($\theta$) given some data (Data) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K).
 
 Since a likelihood isn’t actually a probability it doesn’t obey various rules of probability. For example, likelihood need not sum to 1.
 
@@ -275,7 +275,7 @@ Now we have the posterior distribution, we can derive statistics from it. For ex
 
 # final thoughts
 
-While there are several advantages of bayesian analysis, it is not without objections. Andrew Gelman discusses some of them in this [excellent paper](http://www.stat.columbia.edu/~gelman/research/published/badbayesmain.pdf). My personal take is that it in the best interest of the statistician to be knowledgable in both these methods to be able to see through critiques and defences of both
+While there are several advantages of bayesian analysis, it is not without objections. Andrew Gelman discusses some of them in this [excellent paper](http://www.stat.columbia.edu/~gelman/research/published/badbayesmain.pdf). My personal take is that it in the best interest of the statistician to be knowledgable in both these methods to be able to see through critiques and defences of both these methods
 
 # further reading:
 
