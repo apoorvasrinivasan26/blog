@@ -257,9 +257,7 @@ Sometimes also called as the evidence, P(data) is simply just a constant, partic
 Coming back to our example, so far we have two distributions: prior and likelihood. We can get the posterior by multiplying the two. The resulting distribution is shown below
 
 ```{r}
-#Initial Priors and final Posteriors after all rounds at once
 
-#par(mfrow=c(1,2))
 plot.beta(1,1,31,71,ymax=10,main="Beta(1,1) to Beta(31,71)")
 
 ```

@@ -86,10 +86,7 @@ axis(2, las=1) # custom y axis</code></pre>
 <h3>wait, why did we ignore the demonimator?</h3>
 <p>Sometimes also called as the evidence, P(data) is simply just a constant, particularly it is a normalizing constant. You’ve already observed the data so you can calculate P(data). One of the necessary conditions for a probability distribution is that the sum of all possible outcomes of an event is equal to 1. The normalising constant makes sure that the resulting posterior distribution is a true probability distribution by ensuring that the sum or integral of the distribution is equal to 1.</p>
 <p>Coming back to our example, so far we have two distributions: prior and likelihood. We can get the posterior by multiplying the two. The resulting distribution is shown below</p>
-<pre class="r"><code>#Initial Priors and final Posteriors after all rounds at once
-
-#par(mfrow=c(1,2))
-plot.beta(1,1,31,71,ymax=10,main=&quot;Beta(1,1) to Beta(31,71)&quot;)</code></pre>
+<pre class="r"><code>plot.beta(1,1,31,71,ymax=10,main=&quot;Beta(1,1) to Beta(31,71)&quot;)</code></pre>
 <p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>With the uniform prior, the posterior falls right on top of the likelihood function. In the plot above, the likelihood is nearly invisible because the posterior sits right on top of it. When the prior has only 1 or 2 data points worth of information, it has essentially no impact on the posterior shape</p>
 <pre class="r"><code>plot.beta(12,88,42,158,ymax=15,main=&quot;Beta(12,88) to Beta(42,158)&quot;)</code></pre>
