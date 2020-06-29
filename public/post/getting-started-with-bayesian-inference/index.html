@@ -130,7 +130,7 @@ if (!doNotTrack) {
 <p>As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I’ve learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you’re familiar with frequentist methods.</p>
 <div id="why-go-bayes" class="section level2">
 <h2>why go bayes?</h2>
-<p>There’s tons of material on this by poeple more qualified than me, but the way I see it bayesian methods strays away from the rote and recipe like manner used in frequentist methods and is based on intuition. It produces clear and direct inferences while making use of all available information. Most importantly, using frequentist methods ensues endless arguments about everything(choice of data model, stopping rule, tests, etc.) while in bayesian, you will probably argue about just one thing (prior)</p>
+<p>There’s tons of material on this by people more qualified than me, but the way I see it bayesian methods strays away from the rote and recipe like manner used in frequentist methods and is based on intuition. It produces clear and direct inferences while making use of all available information. Most importantly, using frequentist methods ensues endless arguments about everything(choice of data model, stopping rule, tests, etc.) while in bayesian, you will probably argue about just one thing (prior)</p>
 </div>
 <div id="model-from-bayes-theorem" class="section level2">
 <h2>model from baye’s theorem</h2>
@@ -167,7 +167,7 @@ In Bayesian inference, the beta distribution is the conjugate prior probability 
 </div>
 <div id="likelihood" class="section level1">
 <h1>likelihood</h1>
-<p>The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the workhorse of bayesian inference. This also appears prominently in frequentist methods.</p>
+<p>The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the workhorse of bayesian inference. This also appears prominently in frequentist methods. It is very important to understand likelihood for making inferences so it is worth going into a little more detail than what will be covered here. <a href="https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/">This</a> blogpost is an excellent starting point</p>
 <p>Lets say you go out and collect data from 100 of your colleagues and 30 of them are showing symptoms. The likelihood curve wil look like this:</p>
 <pre class="r"><code>x = seq(.001, .999, .001) ##Set up for creating the distributions
 y2 = dbeta(x, 1 + 30, 1 + 70) # data for likelihood curve, plotted as the posterior from a beta(1,1)
