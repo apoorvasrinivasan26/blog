@@ -168,12 +168,12 @@ In Bayesian inference, the beta distribution is the conjugate prior probability 
 <div id="likelihood" class="section level1">
 <h1>likelihood</h1>
 <p>The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the workhorse of bayesian inference. This also appears prominently in frequentist methods. It is very important to understand likelihood for making inferences so it is worth going into a little more detail than what will be covered here. <a href="https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/">This</a> blogpost is an excellent starting point</p>
-<p>Lets say you go out and collect data from 100 of your colleagues and 30 of them are showing symptoms. The likelihood curve wil look like this:</p>
+<p>Lets say you go out and collect data from 100 of your colleagues and 30 of them also have headache or sore throat but they don’t have a diagnosis. The likelihood curve wil look like this:</p>
 <pre class="r"><code>x = seq(.001, .999, .001) ##Set up for creating the distributions
 y2 = dbeta(x, 1 + 30, 1 + 70) # data for likelihood curve, plotted as the posterior from a beta(1,1)
 
 plot(x, y2, xlim=c(0,1), ylim=c(0, 1.25 * max(y2,1.6)), type = &quot;l&quot;, ylab= &quot;Density&quot;, lty = 3,
-     xlab= &quot;Probability of success&quot;, las=1, main=&quot;Likelihood Curve for Flu Data&quot;,lwd=2,
+     xlab= &quot;Probability of success&quot;, las=1, main=&quot;Likelihood Curve for Symptoms Data&quot;,lwd=2,
      cex.lab=1.5, cex.main=1.5, col = &quot;cyan3&quot;, axes=FALSE)
 axis(1, at = seq(0,1,.2)) #adds custom x axis
 axis(2, las=1) # custom y axis</code></pre>

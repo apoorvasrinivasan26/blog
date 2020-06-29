@@ -209,7 +209,7 @@ In Bayesian inference, the beta distribution is the conjugate prior probability 
 
 The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the workhorse of bayesian inference. This also appears prominently in frequentist methods. It is very important to understand likelihood for making inferences so it is worth going into a little more detail than what will be covered here. [This](https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/) blogpost is an excellent starting point
 
-Lets say you go out and collect data from 100 of your colleagues and 30 of them are showing symptoms. The likelihood curve wil look like this:
+Lets say you go out and collect data from 100 of your colleagues and 30 of them also have headache or sore throat but they don't have a diagnosis. The likelihood curve wil look like this:
 
 
 ```{r}
@@ -217,7 +217,7 @@ x = seq(.001, .999, .001) ##Set up for creating the distributions
 y2 = dbeta(x, 1 + 30, 1 + 70) # data for likelihood curve, plotted as the posterior from a beta(1,1)
 
 plot(x, y2, xlim=c(0,1), ylim=c(0, 1.25 * max(y2,1.6)), type = "l", ylab= "Density", lty = 3,
-     xlab= "Probability of success", las=1, main="Likelihood Curve for Flu Data",lwd=2,
+     xlab= "Probability of success", las=1, main="Likelihood Curve for Symptoms Data",lwd=2,
      cex.lab=1.5, cex.main=1.5, col = "cyan3", axes=FALSE)
 axis(1, at = seq(0,1,.2)) #adds custom x axis
 axis(2, las=1) # custom y axis
