@@ -198,10 +198,10 @@ axis(2, las=1) # custom y axis</code></pre>
 <pre class="r"><code>#Initial Priors and final Posteriors after all rounds at once
 
 #par(mfrow=c(1,2))
-plot.beta(1,1,30,100,ymax=10,main=&quot;Beta(1,1) to Beta(59,43)&quot;)</code></pre>
+plot.beta(1,1,31,71,ymax=10,main=&quot;Beta(1,1) to Beta(31,71)&quot;)</code></pre>
 <p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>With the uniform prior, the posterior falls right on top of the likelihood function. In the plot above, the likelihood is nearly invisible because the posterior sits right on top of it. When the prior has only 1 or 2 data points worth of information, it has essentially no impact on the posterior shape</p>
-<pre class="r"><code>plot.beta(12,88,30,100,ymax=15,main=&quot;Beta(12,88) to Beta(30,70)&quot;)</code></pre>
+<pre class="r"><code>plot.beta(12,88,42,148,ymax=15,main=&quot;Beta(12,88) to Beta(42,158)&quot;)</code></pre>
 <p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>The second plot above shows how the posterior splits the difference between the likelihood and the informed prior. My takeaway is that the the probability of having the flu based on the data you’ve collected is about 20% which is slightly higher than the prior.</p>
 <p>Now we have the posterior distribution, we can derive statistics from it. For example, we could use the expected value of the distribution. Or we could calculate the variance to quantify our uncertainty about our conclusion. One of the most common statistics calculated from the posterior distribution is the mode. This is often used as the estimate of the true value for the parameter of interest and is known as the Maximum a posteriori probability estimate or simply, the MAP estimate. But that’s for another time</p>

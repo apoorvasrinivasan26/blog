@@ -260,7 +260,7 @@ Coming back to our example, so far we have two distributions: prior and likeliho
 #Initial Priors and final Posteriors after all rounds at once
 
 #par(mfrow=c(1,2))
-plot.beta(1,1,30,100,ymax=10,main="Beta(1,1) to Beta(59,43)")
+plot.beta(1,1,31,71,ymax=10,main="Beta(1,1) to Beta(31,71)")
 
 ```
 
@@ -268,7 +268,7 @@ With the uniform prior, the posterior falls right on top of the likelihood funct
 
 
 ```{r}
-plot.beta(12,88,30,100,ymax=15,main="Beta(12,88) to Beta(30,70)")
+plot.beta(12,88,42,148,ymax=15,main="Beta(12,88) to Beta(42,158)")
 ```
 
 The second plot above shows how the posterior splits the difference between the likelihood and the informed prior. My takeaway is that the the probability of  having the flu based on the data you've collected is about 20% which is slightly higher than the  prior.
