@@ -283,4 +283,5 @@ While there are several advantages of bayesian analysis, it is not without objec
 * [a gentle introduction to bayesian analysis](https://srcd.onlinelibrary.wiley.com/doi/pdf/10.1111/cdev.12169)
 * [interactive bayesian inference](https://rpsychologist.com/d3/bayes/)
 * [bayesian versus frequentist inference](https://www.ejwagenmakers.com/2008/BayesFreqBook.pdf)
+* [bayesian analysis recipes](https://github.com/ericmjl/bayesian-analysis-recipes)
 
