@@ -268,7 +268,7 @@ With the uniform prior, the posterior falls right on top of the likelihood funct
 
 
 ```{r}
-plot.beta(12,88,42,148,ymax=15,main="Beta(12,88) to Beta(42,158)")
+plot.beta(12,88,42,158,ymax=15,main="Beta(12,88) to Beta(42,158)")
 ```
 
 The second plot above shows how the posterior splits the difference between the likelihood and the informed prior. My takeaway is that the the probability of  having the flu based on the data you've collected is about 20% which is slightly higher than the  prior.
