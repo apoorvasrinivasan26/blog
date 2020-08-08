@@ -8,6 +8,16 @@
   </url>
   
   <url>
+    <loc>/post/computational-psychiatry/</loc>
+    <lastmod>2020-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/development/</loc>
+    <lastmod>2020-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/development/</loc>
     <lastmod>2020-08-06T00:00:00+00:00</lastmod>
   </url>
@@ -19,6 +29,11 @@
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2020-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <lastmod>2020-08-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,17 +58,12 @@
   </url>
   
   <url>
-    <loc>/tags/statistics/</loc>
-    <lastmod>2020-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/statistics/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/tags/statistics/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -70,11 +80,6 @@
   <url>
     <loc>/tags/thoughts/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/development/</loc>
-    <lastmod>2019-02-10T16:53:06-05:00</lastmod>
   </url>
   
   <url>
