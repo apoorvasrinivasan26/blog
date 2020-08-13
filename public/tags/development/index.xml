@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 06 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>computational psychiatry</title>
+      <title>how data science can transform mental health research</title>
       <link>/post/computational-psychiatry/</link>
-      <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/computational-psychiatry/</guid>
-      <description></description>
+      <description>Two weeks ago, I accepted a data scientist position at the Auerbach Lab at the Columbia University Department of Psychiatry. For the last year, I have taken interest in computational psychiatry and working on how machine learning models can help amelierate certain mental health conditions. In this blogpost, I want to take a broader perspective and address some of the areas where data science can help advance our understanding of mental health.</description>
     </item>
     
     <item>

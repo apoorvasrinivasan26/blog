@@ -1,7 +1,7 @@
 ---
-title: computational psychiatry
+title: how data science can transform mental health research
 author: ''
-date: '2020-08-06'
+date: '2020-08-08'
 slug: computational-psychiatry
 categories:
   - Development
@@ -9,6 +9,35 @@ tags:
   - Development
 description: ''
 ---
+
+Two weeks ago, I accepted a data scientist position at the Auerbach Lab at the Columbia University Department of Psychiatry. For the last year, I have taken interest in computational psychiatry and working on how machine learning models can help amelierate certain mental health conditions. In this blogpost, I want to take a broader perspective and address some of the areas where data science can help advance our understanding of mental health.
+
+
+# Understanding mental illness
+
+
+# Treating mental illness
+
+
+## Underpinning and aetiology
+
+
+## Prevention
+
+## Detection and diagnosis
+
+## Treatment development
+
+## Treatment evaluation
+
+## Disease management
+
+## Health services
+
+
+
+PROMOTING MENTAL HEALTH VS COMBATING MENTAL ILLNESS
+
 
 
 
