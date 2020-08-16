@@ -1,8 +1,8 @@
 ---
-title: data science interview resources
+title: data science interview questions and resources
 author: ''
 date: '2020-08-12'
-slug: data-science-interview-resources
+slug: data-science-interview-questions-and-resources
 categories:
   - Development
 tags:
@@ -10,16 +10,137 @@ tags:
 description: ''
 ---
 
-# Predictive Modeling
+ Based on the team, role and organization, data science interviews may widely vary where 
 
-Analyze this dataset and give me a model that can predict this response variable.
 
-What could be some issues if the distribution of the test data is significantly different than the distribution of the training data?
 
-What are some ways I can make my model more robust to outliers?
+# Machine Learning
 
-What are some differences you would expect in a model that minimizes squared error, versus a model that minimizes absolute error? In which cases would each error metric be appropriate?
+1. How can you make sure that you don’t analyze something that ends up meaningless?
 
-What error metric would you use to evaluate how good a binary classifier is? What if the classes are imbalanced? What if there are more than 2 groups?
+2. Analyze this dataset and give me a model that can predict this response variable.
 
-What is regularization and where might it be helpful? What is an example of using regularization in a model?
+3. What could be some issues if the distribution of the test data is significantly different than the distribution of the training data?
+
+4. What are some ways I can make my model more robust to outliers?
+
+5. Explain how decision trees work.
+
+6. What are some differences you would expect in a model that minimizes squared error, versus a model that minimizes absolute error? In which cases would each error metric be appropriate?
+
+7. What error metric would you use to evaluate how good a binary classifier is? What if the classes are imbalanced? What if there are more than 2 groups?
+
+8. What is regularization and where might it be helpful? What is an example of using regularization in a model?
+
+9. Why might it be preferable to include fewer predictors over many?
+
+10. What is regularization and why is it useful?
+
+11. Drawbacks of a linear model?
+
+12. What is kernal trick?
+
+13. How can you say time-series is stationary?
+
+### More resources for machine learning:
+
+
+
+# Statistical Inference
+
+31. What is maximum likelihood estimation? Could there be any case where it doesn’t exist?
+
+32. What’s the difference between a MAP, MOM, MLE estimator? In which cases would you want to use each?
+
+33. What is the difference between covariance and correlation?
+
+34. What is power analysis?
+
+35. What is a confidence interval and how do you interpret it?
+
+36. What is the basic idea behind bootstrapping?
+
+37. What is unbiasedness as a property of an estimator? Is this always a desirable property when performing inference? What about in data analysis or predictive modeling?
+
+38. What is z-scoring? Why would you do it?
+
+39. What is the law of large numbers?
+
+40. What are eigenvalues and eigenvectors?
+
+41. What is the difference between sentivity and specificity?
+
+42. What is a random variable?
+
+43. What are the drawbacks of locally weighted average?
+
+44. What are the different correlation measures between continuous and categorical variables
+
+
+# Programming
+
+14. Write an algorithm that can calculate the square root of a number.
+
+15. Given a list of numbers, can you return the outliers?
+
+16. When can parallelism make your algorithms run faster? When could it make your algorithms run slower?
+
+17. What are the different types of joins? What are the differences between them?
+
+18. Why might a join on a subquery be slow? How might you speed it up?
+
+
+# Probability
+
+19. How can you generate a random number between 1 - 7 with only a die?
+
+20. How can you get a fair coin toss if someone hands you a coin that is weighted to come up heads more often than tails?
+
+21. You have an 50-50 mixture of two normal distributions with the same standard deviation. How far apart do the means need to be in order for this distribution to be bimodal?
+
+22. Given draws from a normal distribution with known parameters, how can you simulate draws from a uniform distribution?
+
+23. A certain couple tells you that they have two children, at least one of which is a girl. What is the probability that they have two girls?
+
+24. How many ways can you split 12 people into 3 teams of 4?
+
+25. On a dating site, users can select 5 out of 24 adjectives to describe themselves. A match is declared between two users if they match on at least 4 adjectives. If Alice and Bob randomly pick adjectives, what is the probability that they form a match?
+
+26. Let’s say you have a very tall father. On average, what would you expect the height of his son to be? Taller, equal, or shorter? What if you had a very short father?
+
+27. What’s the expected number of coin flips until you get two heads in a row? What’s the expected number of coin flips until you get two tails in a row?
+
+28. Let’s say we play a game where I keep flipping a coin until I get heads. If the first time I get heads is on the nth coin, then I pay you 2n-1 dollars. How much would you pay me to play this game?
+
+29. You have a 0.1% chance of picking up a coin with both heads, and a 99.9% chance that you pick up a fair coin. You flip your coin and it comes up heads 10 times. What’s the chance that you picked up the fair coin, given the information that you observed?
+
+30. You have two coins, one of which is fair and comes up heads with a probability 1/2, and the other which is biased and comes up heads with probability 3/4. You randomly pick coin and flip it twice, and get heads both times. What is the probability that you picked the fair coin?
+
+### Resources for probability:
+
+* [Brilliant](https://brilliant.org)
+* 
+
+# Communication
+
+45. Explain to me a technical concept related to the role that you’re interviewing for.
+
+46. Introduce me to something you’re passionate about.
+
+47. How will you report statistical analysis to a non-technical staff?
+
+48. Tell me about a data project that you’ve done with a team. What did you add to the group?
+
+49. Tell me about a dataset that you’ve analyzed. What techniques did you find helpful and which ones didn’t work?
+
+50. What’s your favorite algorithm? Can you explain it to me?
+
+51. How could you help the generate public understanding towards the importance of using data to generate insights?
+
+
+
+
+
+
+
+

@@ -13,15 +13,16 @@
     
     
     <item>
-      <title>data science interview resources</title>
-      <link>/post/data-science-interview-resources/</link>
+      <title>data science interview questions and resources</title>
+      <link>/post/data-science-interview-questions-and-resources/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/data-science-interview-resources/</guid>
-      <description>Predictive Modeling Analyze this dataset and give me a model that can predict this response variable.
-What could be some issues if the distribution of the test data is significantly different than the distribution of the training data?
-What are some ways I can make my model more robust to outliers?
-What are some differences you would expect in a model that minimizes squared error, versus a model that minimizes absolute error?</description>
+      <guid>/post/data-science-interview-questions-and-resources/</guid>
+      <description>Based on the team, role and organization, data science interviews may widely vary where
+Machine Learning How can you make sure that you don’t analyze something that ends up meaningless?
+ Analyze this dataset and give me a model that can predict this response variable.
+ What could be some issues if the distribution of the test data is significantly different than the distribution of the training data?
+ What are some ways I can make my model more robust to outliers?</description>
     </item>
     
     <item>
