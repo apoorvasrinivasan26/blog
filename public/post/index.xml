@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,14 +15,10 @@
     <item>
       <title>data science interview questions and resources</title>
       <link>/post/data-science-interview-questions-and-resources/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/data-science-interview-questions-and-resources/</guid>
-      <description>Based on the team, role and organization, data science interviews may widely vary where
-Machine Learning How can you make sure that you don’t analyze something that ends up meaningless?
- Analyze this dataset and give me a model that can predict this response variable.
- What could be some issues if the distribution of the test data is significantly different than the distribution of the training data?
- What are some ways I can make my model more robust to outliers?</description>
+      <description>As a recent graduate, I spent a better part of this year applying and interviewing for data science jobs. By going through a process of hundreds of applications, a dozen phone screens and four final rounds of interviews, I have accumulated a significant amount of resources and questions that have helped me prepare and land my dream data scientist role. Organized by categorizies, you will find over 50 interview questions along with some resources to help you brush up your skills and crush that interview!</description>
     </item>
     
     <item>
