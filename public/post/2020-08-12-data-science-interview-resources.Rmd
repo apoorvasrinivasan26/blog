@@ -17,7 +17,7 @@ Please note that the questions below are more suitable for entry level data scie
 
 # machine learning
 
-Machine Learning questions generally tend to be open ended in an interview where you will most likely be asked to defend your approaches in your previous projects or take-home tests. Be prepared to measure the "goodness" of a feature for a company's product and make sure to approach it in a scientific principled way. 
+Machine learning questions generally tend to be open ended in an interview where you will most likely be asked to defend your approaches in your previous projects or take-home tests. Be prepared to measure the "goodness" of a feature for a company's product and make sure to approach it in a scientific and principled way. 
 
 1. Analyze this dataset and give me a model that can predict this response variable.
 
@@ -162,7 +162,7 @@ Programming tests for data scientists usually involve querying with SQL. This ca
 
 # parting thoughts
 
-Please consider the above questions as a workbook to review some topics and identify gaps in areas you can fill in later. Interviews are hard, but there is a silver lining in that they serve as a forcing function for learning. 
+Interviews are hard, but there is a silver lining in that they serve as a forcing function for learning. 
 
 Thanks to others sharing what they learned, I was able to fail, learn from it, and then do it over again until I landed a job that I loved. I'm confident that with these resources and the right mindset, you'll do great too. Good luck! 
 
