@@ -84,7 +84,7 @@ Data scientist interview is incomplete without testing your knowledge in statist
 
 27. What are the different correlation measures between continuous and categorical variables
 
-### resources:
+### resources for statistical inference:
 
 * [Elements of statistical learning](https://web.stanford.edu/~hastie/ElemStatLearn/)
 
@@ -104,7 +104,7 @@ Programming tests for data scientists usually involve querying with SQL. This ca
 
 32. Why might a join on a subquery be slow? How might you speed it up?
 
-### resources:
+### resources for programming:
 
 * [Interview Query](https://www.interviewquery.com)
 * [W3Schools for SQL](https://www.w3schools.com)
