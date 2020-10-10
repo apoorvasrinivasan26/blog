@@ -1,0 +1,42 @@
+---
+title: resources for data science interview 
+author: ''
+date: '2020-08-06'
+slug: resources-for-data-science-interview
+categories:
+  - Development
+tags: []
+description: ''
+---
+
+
+# Predictive Modeling
+
+(Given a Dataset) Analyze this dataset and give me a model that can predict this response variable.
+
+
+What could be some issues if the distribution of the test data is significantly different than the distribution of the training data?
+
+
+What are some ways I can make my model more robust to outliers?
+
+
+What are some differences you would expect in a model that minimizes squared error, versus a model that minimizes absolute error? In which cases would each error metric be appropriate?
+
+
+What error metric would you use to evaluate how good a binary classifier is? What if the classes are imbalanced? What if there are more than 2 groups?
+
+
+What are various ways to predict a binary response variable? Can you compare two of them and tell me when one would be more appropriate? What’s the difference between these? (SVM, Logistic Regression, Naive Bayes, Decision Tree, etc.)
+
+
+What is regularization and where might it be helpful? What is an example of using regularization in a model?
+
+Why might it be preferable to include fewer predictors over many?
+
+# Programming
+
+
+
+
+

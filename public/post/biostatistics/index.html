@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html
+  class=""
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta name="keywords" content="Statistics,
+">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:title" content="what does a personalized clinical trial look like?(Draft)" />
+<meta property="og:site_name" content="Welcome" />
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="/post/biostatistics/" />
+<meta property="og:locale" content="en-us" />
+<meta property="article:published_time" content="2020-08-18
+" /> <meta property="article:modified_time" content="2020-08-18
+" />
+
+
+<meta property="article:tag" content="Statistics" />
+
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@siegerts" />
+<meta name="twitter:creator" content="@siegerts" />
+<meta
+  name="twitter:title"
+  content="what does a personalized clinical trial look like?(Draft) | Welcome"
+/>
+<meta
+  name="twitter:description"
+  content="For many decades, randomized controlled trials have been the gold standard for clinical trials. You take a group of people with some condition, and you randomly assign each of those people to one of two (or more) treatment groups. These groups are then compared on a predefined measured response. Ideally, noone – not the researcher, not the patients – knows who is in which group until the end of the study.|"
+/>
+<meta name="twitter:image:src" content="" />
+<meta name="twitter:domain" content="/post/biostatistics/" />
+
+
+
+    <title>what does a personalized clinical trial look like?(Draft)</title>
+    <link rel="canonical" href="/post/biostatistics/" />
+
+
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
+/>
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
+/>
+
+
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-XXXXXXXXX-X', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+
+
+<body
+  lang="en-us"
+  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
+  itemscope
+  itemtype="http://schema.org/Article"
+>
+  
+  <span class="b">/ </span>
+  <a href="/" class="b bb bw1 pb1 no-underline black">Welcome</a>
+  <span class="b"> / </span>
+  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
+
+  <section id="main" class="mt5">
+    <h1 itemprop="name" id="title">what does a personalized clinical trial look like?(Draft)</h1>
+    <span class="f6 gray">August 18, 2020</span>
+
+      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
+        
+
+
+<p>For many decades, randomized controlled trials have been the gold standard for clinical trials. You take a group of people with some condition, and you randomly assign each of those people to one of two (or more) treatment groups. These groups are then compared on a predefined measured response. Ideally, noone – not the researcher, not the patients – knows who is in which group until the end of the study.</p>
+<div id="looking-past-one-size-fits-all-approach" class="section level1">
+<h1>looking past one-size fits all approach</h1>
+<p>The study I’ve just described is called a parallel-group trial, and the vast majority of randomized controlled trials (RCTs) follow this design. Modern clinical evidence depends on such mixture of parallel-group (majority) and crossover (minority) trials, with a few other designs (factorial, cluster, split-body, etc.) thrown in. Regardless of design specifics, however, all of this evidence suffers from the same key limitation: treatment effects are estimated at the population level, leading to one-size-fits-all recommendations that are not necessarily appropriate for individual patients. The extent to which results from clinical trials are relevant to “real-life” patient populations is an <a href="link">open question</a> Clinicians following evidence-based treatment guidelines are often left to their own judgement to tackle heterogeneity in both treatment efficacy and side effects.</p>
+</div>
+<div id="renewed-momentum-in-the-precision-medicine-era" class="section level1">
+<h1>renewed momentum in the precision medicine era</h1>
+<p>At its core, precision medicine seeks solutions to such challenges. Personalized trial designs, also known as N-of-1 trials, have been developed to address this fundamental problem but are not yet part of the arsenal of precision medicine. Currently, these designs are rarely used in clinical practice, in evidence-genesis, or in the formation of guidelines.For the last decade, there has been increasing interest in two streams of development in precision medicine. First is the integration of electronic medical records capturing longitudinal data and providing clinical phenotypes into decision making tools for precision medicine. Secondly, the advance in genomic medicine and pharmacogenomics research provides an expanding arsenal of genetic predictors of disease and health outcomes. Together these two streams provide a unique framework for an individualized diagnostic and therapeutic approach.</p>
+</div>
+<div id="enter-n-of-1-clinical-trials" class="section level1">
+<h1>enter n-of-1 clinical trials</h1>
+<p>N-of-1 or single subject clinical trials consider an individual patient as the sole unit of observation in a study investigating the efficacy or side-effect profiles of different interventions. The ultimate goal of an n-of-1 trial is to determine the optimal or best intervention for an individual patient using objective data-driven criteria. Such trials can leverage study design and statistical techniques associated with standard population-based clinical trials, including randomization, washout and crossover periods, as well as placebo controls.</p>
+</div>
+
+      </article>
+
+      
+      <span class="f6 gray mv3" title="Lastmod: August 18, 2020. Published at: 2020-08-18.">
+        
+      </span>
+
+      
+
+  </section>
+
+  <footer>
+    <div>
+      <p class="f6 gray mt6 lh-copy">
+        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>.
+      </p>
+    </div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+  </body>
+</html>

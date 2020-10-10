@@ -1,0 +1,287 @@
+---
+title: getting started with bayesian inference
+author: ''
+date: '2020-06-27'
+slug: getting-started-with-bayesian-inference
+categories:
+  - statistics
+tags:
+  - statistics
+  - R
+  - bayesian
+description: ''
+---
+
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+```{r, include=FALSE}
+
+## Function for plotting priors, likelihoods, and posteriors for binomial data
+## Output consists of a plot and various statistics
+## PS and PF determine the shape of the prior distribution.
+## PS = prior success, PF = prior failure for beta dist. 
+## PS = 1, PF = 1 corresponds to uniform(0,1) and is default. If left at default, posterior will be equivalent to likelihood
+## k = number of observed successes in the data, n = total trials. If left at 0 only plots the prior dist.
+## null = Is there a point-null hypothesis? null = NULL leaves it out of plots and calcs
+## CI = Is there a relevant X% credibility interval? .95 is recommended and standard
+
+
+
+plot.beta <- function(PS = 1, PF = 1, k = 0, n = 0, null = NULL, CI = NULL, ymax = "auto", main = NULL) {
+        
+        x = seq(.001, .999, .001) ##Set up for creating the distributions
+        y1 = dbeta(x, PS, PF) # data for prior curve
+        y3 = dbeta(x, PS + k, PF + n - k) # data for posterior curve
+        y2 = dbeta(x, 1 + k, 1 + n - k) # data for likelihood curve, plotted as the posterior from a beta(1,1)
+        
+        if(is.numeric(ymax) == T){ ##you can specify the y-axis maximum
+                y.max = ymax
+        }        
+        else(
+                y.max = 1.25 * max(y1,y2,y3,1.6) ##or you can let it auto-select
+        )
+        
+        if(is.character(main) == T){
+                Title = main
+        }
+        else(
+                Title = "Prior-to-Posterior Transformation with Binomial Data"
+        )
+        
+        
+        plot(x, y1, xlim=c(0,1), ylim=c(0, y.max), type = "l", ylab= "Density", lty = 2,
+             xlab= "Probability of success", las=1, main= Title,lwd=3,
+             cex.lab=1.5, cex.main=1.5, col = "honeydew4", axes=FALSE)
+        
+        axis(1, at = seq(0,1,.2)) #adds custom x axis
+        axis(2, las=1) # custom y axis
+        
+        
+        
+        if(n != 0){
+                #if there is new data, plot likelihood and posterior
+                lines(x, y2, type = "l", col = "darkslategray3", lwd = 2, lty = 3)
+                lines(x, y3, type = "l", col = "firebrick4", lwd = 5)
+                legend("topleft", c("Prior", "Posterior", "Likelihood"), col = c("honeydew4", "firebrick4", "darkslategray3"), 
+                       lty = c(2,1,3), lwd = c(3,5,2), bty = "n", y.intersp = .55, x.intersp = .1, seg.len=.7)
+                
+                ## adds null points on prior and posterior curve if null is specified and there is new data
+                if(is.numeric(null) == T){
+                        ## Adds points on the distributions at the null value if there is one and if there is new data
+                        points(null, dbeta(null, PS, PF), pch = 21, bg = "blue", cex = 1.5)
+                        points(null, dbeta(null, PS + k, PF + n - k), pch = 21, bg = "darkorchid", cex = 1.5)
+                        abline(v=null, lty = 5, lwd = 1, col = "grey73")
+                        ##lines(c(null,null),c(0,1.11*max(y1,y3,1.6))) other option for null line
+                }
+        }
+        
+        ##Specified CI% but no null? Calc and report only CI
+        if(is.numeric(CI) == T && is.numeric(null) == F){
+                CI.low <- qbeta((1-CI)/2, PS + k, PF + n - k)
+                CI.high <- qbeta(1-(1-CI)/2, PS + k, PF + n - k)
+                
+                SEQlow<-seq(0, CI.low, .001)
+                SEQhigh <- seq(CI.high, 1, .001)
+                ##Adds shaded area for x% Posterior CIs
+                cord.x <- c(0, SEQlow, CI.low) ##set up for shading
+                cord.y <- c(0,dbeta(SEQlow,PS + k, PF + n - k),0) ##set up for shading
+                polygon(cord.x,cord.y,col='orchid', lty= 3) ##shade left tail
+                cord.xx <- c(CI.high, SEQhigh,1) 
+                cord.yy <- c(0,dbeta(SEQhigh,PS + k, PF + n - k), 0)
+                polygon(cord.xx,cord.yy,col='orchid', lty=3) ##shade right tail
+                
+                return( list( "Posterior CI lower" = round(CI.low,3), "Posterior CI upper" = round(CI.high,3)))
+        }
+        
+        ##Specified null but not CI%? Calculate and report BF only 
+        if(is.numeric(null) == T && is.numeric(CI) == F){
+                null.H0 <- dbeta(null, PS, PF)
+                null.H1 <- dbeta(null, PS + k, PF + n - k)
+                CI.low <- qbeta((1-CI)/2, PS + k, PF + n - k)
+                CI.high <- qbeta(1-(1-CI)/2, PS + k, PF + n - k)
+                return( list("BF01 (in favor of H0)" = round(null.H1/null.H0,3), "BF10 (in favor of H1)" = round(null.H0/null.H1,3)
+                ))
+        }
+        
+        ##Specified both null and CI%? Calculate and report both
+        if(is.numeric(null) == T && is.numeric(CI) == T){
+                null.H0 <- dbeta(null, PS, PF)
+                null.H1 <- dbeta(null, PS + k, PF + n - k)
+                CI.low <- qbeta((1-CI)/2, PS + k, PF + n - k)
+                CI.high <- qbeta(1-(1-CI)/2, PS + k, PF + n - k)
+                
+                SEQlow<-seq(0, CI.low, .001)
+                SEQhigh <- seq(CI.high, 1, .001)
+                ##Adds shaded area for x% Posterior CIs
+                cord.x <- c(0, SEQlow, CI.low) ##set up for shading
+                cord.y <- c(0,dbeta(SEQlow,PS + k, PF + n - k),0) ##set up for shading
+                polygon(cord.x,cord.y,col='orchid', lty= 3) ##shade left tail
+                cord.xx <- c(CI.high, SEQhigh,1) 
+                cord.yy <- c(0,dbeta(SEQhigh,PS + k, PF + n - k), 0)
+                polygon(cord.xx,cord.yy,col='orchid', lty=3) ##shade right tail
+                
+                return( list("BF01 (in favor of H0)" = round(null.H1/null.H0,3), "BF10 (in favor of H1)" = round(null.H0/null.H1,3),
+                             "Posterior CI lower" = round(CI.low,3), "Posterior CI upper" = round(CI.high,3)))
+        }
+        
+}
+
+
+```
+
+
+
+[In my previous post](https://apoorvasrinivasanblog.com/post/hypothesis-testing/), we spoke about hypothesis testing from a frequentist perspective. This is the method that is commonly taught in STAT101 classes. But for many decades, some statisticians have argued for another approach to conduct statistical analysis based on bayes theorem.
+
+
+As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I've learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you're familiar with frequentist methods.
+
+
+## why go bayes?
+
+There's tons of material on this by people more qualified than me, but the way I see it bayesian methods strays away from the rote and recipe like manner used in frequentist methods and is based on intuition. It produces clear and direct inferences while making use of all available information. Most importantly, using frequentist methods ensues endless arguments about everything(choice of data model, stopping rule, tests, etc.) while in bayesian, you will probably argue about just one thing (prior)
+
+## model from baye's theorem
+
+As one of the most popular theorems in statistics, you've must've already seen baye's theorem. Putting it in a model form:
+
+$P( \theta /data) = \dfrac {P(data/\theta)P(\theta)}{P(data)}$
+
+where $\theta$ is your hypothesis
+
+There are three main ingredients to bayesian hypothesis:
+
+* Prior
+* Likelihood
+* Posterior
+
+They can be put together into the bayes theorem as shown:
+
+$posterior = \dfrac {prior * likelihood} {marginal \hspace{0.2cm} likelihood}$
+
+
+Let's start with an example:
+
+
+Let's say you have a headache and sore throat, and you know that some people in the office you work at have also had the flu. Does this mean you have the flu? Let's find out if bayesian inference can help us figure it out.
+
+Putting our problem in mathematical terms, it looks like this:
+
+$P(flu| symptoms) = \dfrac {P(symptoms| flu) * P(flu)} {P(symptoms)}$ 
+
+# prior
+
+The first ingredient is the background knowledge on the parameters of the model being tested. This refers to the knowledge available _before_ seeing the data. 
+
+
+Let's assume you don't know anything about the prevalence of flu. So you'll probably pick a prior where all probabilities are equally likely. This is called an __uninformed prior__ and it looks something like the plot below
+
+<plot the prior plot>
+
+```{r}
+plot.beta(1,1,ymax=3.2,main="Uniform Prior, Beta(1,1)")
+```
+
+
+Wanting to gain a little more information you roll over, grab your phone
+and search Google. You find an article that says that only 12% of the
+population will get the flu in a given year. But another article says that the prevalence could be a little higher. In this case a distribution of our prior belief might be more appropriate to incorporate our uncertainity. This distribution is known as the __prior distribution__. In particular, this is called an __informed prior__ distribution because you are incorporating your previous beliefs in the model
+
+<plot another prior dist>
+
+
+```{r}
+plot.beta(12,88,ymax=15,main="Informed Prior, Beta(12, 88)")
+```
+
+
+:pencil:
+In Bayesian inference, the beta distribution is the conjugate prior probability distribution for the binomial distribution. Computing a posterior using a conjugate prior is very convenient, because you can avoid expensive numerical computation. You can learn more about conjugate priors [here](https://towardsdatascience.com/conjugate-prior-explained-75957dc80bfb)
+
+
+# likelihood
+
+The second ingredient is likelihood, this is where we extract information from our data. Likelihood function is the workhorse of bayesian inference. This also appears prominently in frequentist methods. It is very important to understand likelihood for making inferences so it is worth going into a little more detail than what will be covered here. [This](https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/) blogpost is an excellent starting point
+
+Lets say you go out and collect data from 100 of your colleagues and 30 of them also have headache or sore throat but they don't have a diagnosis. The likelihood curve wil look like this:
+
+
+```{r}
+x = seq(.001, .999, .001) ##Set up for creating the distributions
+y2 = dbeta(x, 1 + 30, 1 + 70) # data for likelihood curve, plotted as the posterior from a beta(1,1)
+
+plot(x, y2, xlim=c(0,1), ylim=c(0, 1.25 * max(y2,1.6)), type = "l", ylab= "Density", lty = 3,
+     xlab= "Probability of success", las=1, main="Likelihood Curve for Symptoms Data",lwd=2,
+     cex.lab=1.5, cex.main=1.5, col = "cyan3", axes=FALSE)
+axis(1, at = seq(0,1,.2)) #adds custom x axis
+axis(2, las=1) # custom y axis
+
+
+```
+
+
+The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. In other words, facets of the data that do not factor into the likelihood function are irrelevant to the evaluation of the strength of the statistical evidence. The likelihood function is the most compact summary of the data that does not loose information. 
+
+
+
+### is likelihood a probability?
+
+Likelihood is not a probability, but it's proportional to it. 
+
+The likelihood of a hypothesis ($\theta$) given some data (Data) is proportional to the probability of obtaining D given that H is true, multiplied by an arbitrary positive constant (K).
+
+Since a likelihood isn’t actually a probability it doesn’t obey various rules of probability. For example, likelihood need not sum to 1.
+
+A critical difference between probability and likelihood is in the interpretation of what is fixed and what can vary. The distinction is subtle, so pay close attention. For the conditional probability, the hypotheses is fixed and the data vary. For likelihood, the data are a given and the hypotheses vary. 
+
+
+
+# posterior
+
+Now for the easiest part. Getting the posterior distribution. This is the distribution representing our belief about the parameter values after we have calculated everything on the right hand side taking the observed data into account.
+
+
+$Posterior \propto Prior * Likelihood$
+
+### wait, why did we ignore the demonimator?
+
+Sometimes also called as the evidence, P(data) is simply just a constant, particularly it is a normalizing constant. You've already observed the data so you can calculate P(data). One of the necessary conditions for a probability distribution is that the sum of all possible outcomes of an event is equal to 1. The normalising constant makes sure that the resulting posterior distribution is a true probability distribution by ensuring that the sum or integral of the distribution  is equal to 1.
+
+
+Coming back to our example, so far we have two distributions: prior and likelihood. We can get the posterior by multiplying the two. The resulting distribution is shown below
+
+```{r}
+
+plot.beta(1,1,31,71,ymax=10,main="Beta(1,1) to Beta(31,71)")
+
+```
+
+With the uniform prior, the posterior falls right on top of the likelihood function. In the plot above, the likelihood is nearly invisible because the posterior sits right on top of it. When the prior has only 1 or 2 data points worth of information, it has essentially no impact on the posterior shape 
+
+
+```{r}
+plot.beta(12,88,42,158,ymax=15,main="Beta(12,88) to Beta(42,158)")
+```
+
+The second plot above shows how the posterior splits the difference between the likelihood and the informed prior. My takeaway is that the the probability of  having the flu based on the data you've collected is about 20% which is slightly higher than the  prior.
+
+Now we have the posterior distribution, we can derive statistics from it. For example, we could use the expected value of the distribution. Or we could calculate the variance to quantify our uncertainty about our conclusion. One of the most common statistics calculated from the posterior distribution is the mode. This is often used as the estimate of the true value for the parameter of interest and is known as the Maximum a posteriori probability estimate or simply, the MAP estimate. But that's for another time
+
+# final thoughts
+
+While there are several advantages of bayesian analysis, it is not without objections. Andrew Gelman discusses some of them in this [excellent paper](http://www.stat.columbia.edu/~gelman/research/published/badbayesmain.pdf). My personal take is that it in the best interest of the statistician to be knowledgable in both these methods to be able to see through critiques and defences of both these methods
+
+# further reading:
+
+* [doing bayesian data analysis](https://www.amazon.com/Doing-Bayesian-Data-Analysis-Tutorial/dp/0123814855)
+* [a gentle introduction to bayesian analysis](https://srcd.onlinelibrary.wiley.com/doi/pdf/10.1111/cdev.12169)
+* [interactive bayesian inference](https://rpsychologist.com/d3/bayes/)
+* [bayesian versus frequentist inference](https://www.ejwagenmakers.com/2008/BayesFreqBook.pdf)
+* [bayesian analysis recipes](https://github.com/ericmjl/bayesian-analysis-recipes)
+

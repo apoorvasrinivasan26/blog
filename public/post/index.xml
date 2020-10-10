@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Welcome</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Welcome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
+    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>what does a personalized clinical trial look like?(Draft)</title>
+      <link>/post/biostatistics/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/biostatistics/</guid>
+      <description>For many decades, randomized controlled trials have been the gold standard for clinical trials. You take a group of people with some condition, and you randomly assign each of those people to one of two (or more) treatment groups. These groups are then compared on a predefined measured response. Ideally, noone – not the researcher, not the patients – knows who is in which group until the end of the study.</description>
+    </item>
+    
+    <item>
+      <title>data science interview questions and resources</title>
+      <link>/post/data-science-interview-questions-and-resources/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/data-science-interview-questions-and-resources/</guid>
+      <description>As a recent graduate, I spent a better part of this year applying and interviewing for data science jobs. By going through a process of hundreds of applications, a dozen phone screens and four final rounds of interviews, I have accumulated a significant amount of resources and questions that have helped me prepare and land my dream data scientist role. Organized by categorizies, you will find over 50 interview questions along with some resources to help you brush up your skills and crush that interview!</description>
+    </item>
+    
+    <item>
+      <title>getting started with bayesian inference</title>
+      <link>/post/getting-started-with-bayesian-inference/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/getting-started-with-bayesian-inference/</guid>
+      <description>In my previous post, we spoke about hypothesis testing from a frequentist perspective. This is the method that is commonly taught in STAT101 classes. But for many decades, some statisticians have argued for another approach to conduct statistical analysis based on bayes theorem.
+As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I’ve learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you’re familiar with frequentist methods.</description>
+    </item>
+    
+    <item>
+      <title>introduction to hypothesis testing</title>
+      <link>/post/hypothesis-testing/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hypothesis-testing/</guid>
+      <description>Hello and welcome to my brand new website! I’ve started this blog to think through various statistical concepts and techniques and hopefully they’ll be useful to you too. Let’s start with every statisticians favorite flex: hypothesis testing
+There’s two main branches of statistics. One, where we analyze and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. This is called inferential statistics and hypothesis testing is an important part of it.</description>
+    </item>
+    
+    <item>
+      <title>on edward jenner and creativity</title>
+      <link>/post/on-edward-jenner-and-creativity/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/on-edward-jenner-and-creativity/</guid>
+      <description>One common question that’s on everyone’s minds as we fiercely scrub our hands, pool our resources, conserve our consumption, stock up (but not hoard), invent calculus or write King Lear is: when will this end? Nobody knows what the answer to that question is but we are all in agreement that it could be in the faraway promise land of vaccines.
+Although vaccination now is a common method to provide long-term protection against a disease, it was unheard of until about 200 years ago.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+---
+title: n-of-1 clinical trial
+author: ''
+date: '2020-08-18'
+slug: biostatistics
+categories:
+  - Statistics
+tags:
+  - Statistics
+description: ''
+---
+
+
+
+
+
+
+
+
+
+
