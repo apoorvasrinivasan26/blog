@@ -30,7 +30,7 @@ Turns out, a paradigm of programming called *functional programming* is perfect 
 
 # what is functional programming?
 
-There are many definitions for precisely what makes a language functional. However, in the simplest sense, functional programming refers to programming computers where *pure functions* serve as the primary mechanism for manipulating data. A function is said to be pure when it takes inputs, manipulates those inputs, and returns output, all without having to store some temporary or external state. This state is known as a side effect. 
+There are many definitions for precisely what makes a language functional. However, in the simplest sense, functional programming refers to programming computers where *pure functions* serve as the primary mechanism for manipulating data. A function is said to be pure when it takes inputs, manipulates those inputs, and returns output, all without having to store some temporary or external state. This state is known as a *side effect*. 
 
 
 As a general rule, when writing pure functions, think of your code as if you were writing a mathematical function:
@@ -57,20 +57,52 @@ We will just look at three general methods that are used in functional programmi
 
 ## map
 
-The .map function goes through every single element of a object(list or vectors) and applies a passed in function to each element. There is one VERY important point to pay attention to that's not talked about is that the .map function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a brand new list with the modified values.
+The map function goes through every single element of a object(list or vectors) and applies a passed in function to each element. There is one VERY important point to pay attention to is that the .map function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a brand new list with the modified values.
 
 In the `purrr` package the `map()` function returns a list, while the `map_lgl()`, `map_chr()`, and `map_dbl()` functions return vectors of logical values, strings, or numbers respectively.
 
-## filter
-
-The .filter function goes through every single element of an array and checks if that element returns true or false when passed into the passed in function. If it returns true, we keep that element, otherwise we don't. 
-
-Just like .map, the .filter function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a new list  with just the elements that didn't get filtered out. So while your collection might shrink in size (or might not), you will still go through every single element without the option to *break* or *continue*.
-
-The group of functions that includes `keep()`, `discard()`, `every()`, and `some()` are known as filter functions. Each of these functions takes a vector and a predicate function.  A predicate function is a function that returns TRUE or FALSE.  For `keep()` only the elements of the vector that satisfy the predicate function are returned while all other elements are removed:
-
 ```{r}
 library(purrr)
+map_lgl(c(1, 2, 3, 4, 5), function(x){
+  x > 3
+})
+
+
+map_chr(c(5, 4, 3, 2, 1), function(x){
+  c("one", "two", "three", "four", "five")[x]
+})
+
+```
+
+
+In each of the examples above we have only been mapping a function over one data structure, however you can map a function over two data structures with the `map2()` family of functions. The first two arguments should be two vectors of the same length, followed by a function which will be evaluated with an element of the first vector as the first argument and an element of the second vector as the second argument. For example:
+
+```{r}
+map2_chr(letters, 1:26, paste)
+```
+
+The `pmap()` family of functions is similar to `map2()`, however instead of mapping across two vectors or lists, you can map across any number of lists. The list argument is a list of lists that the function will map over, followed by the function that will applied:
+
+```{r}
+pmap_chr(list(
+  list(1, 2, 3),
+  list("one", "two", "three"),
+  list("uno", "dos", "tres")
+), paste)
+```
+
+
+
+## filter
+
+The filter function goes through every single element of an array and checks if that element returns true or false when passed into the passed in function. If it returns true, we keep that element, otherwise we don't. 
+
+Just like map, the filter function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a new list  with just the elements that didn't get filtered out.
+
+The group of functions that includes `keep()`, `discard()`, `every()`, and `some()` are known as filter functions. Each of these functions takes a vector and a predicate function.  A predicate function is a function that returns `TRUE` or `FALSE`.  For `keep()` only the elements of the vector that satisfy the predicate function are returned while all other elements are removed:
+
+```{r}
+
 keep(1:20, function(x){
   x %% 2 == 0
 })
@@ -78,16 +110,17 @@ keep(1:20, function(x){
 
 ##  reduce
 
-The reduce function will also go through every single element of an array BUT in this case it will not return you another collection, but a single element.
+The `Reduce` function will also go through every single element of an array BUT in this case it will not return you another collection, but a single element.
 
-
-`reduce` and  `accumulate`
 
 
 ```{r}
-cumsum(1:6)
 
 Reduce(f = "+", x = 1:6, accumulate = TRUE)
+
+Reduce(f = "+", x = 1:6, accumulate = FALSE)
 ```
 
+From the example above, `Reduce` combines the first element of a vector with the second element of a vector, then that combined result is combined with the third element of the vector, and so on until the end of the vector is reached.
+Setting `accumulate = FALSE` only returns the final result.
 
