@@ -30,7 +30,7 @@ Turns out, a paradigm of programming called *functional programming* is perfect 
 
 # what is functional programming?
 
-There are many definitions for precisely what makes a language functional. However, in the simplest sense, functional programming refers to programming computers where *pure functions* serve as the primary mechanism for manipulating data. A function is said to be pure when it takes inputs, manipulates those inputs, and returns output, all without having to store some temporary or external state. This state is known as a *side effect*. 
+There are many definitions for precisely what makes a language functional. However, in the simplest sense, functional programming refers to programming computers where **pure functions** serve as the primary mechanism for manipulating data. A function is said to be pure when it takes inputs, manipulates those inputs, and returns output, all without having to store some temporary or external state. This state is known as a **side effect**. 
 
 
 As a general rule, when writing pure functions, think of your code as if you were writing a mathematical function:
