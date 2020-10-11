@@ -1,0 +1,93 @@
+---
+title: niceR code with functional programming
+author: ''
+date: '2020-10-10'
+slug: nicer-code-with-functional-programming
+categories:
+  - Development
+tags:
+  - R
+  - programming
+description: ''
+---
+
+
+In this blogpost, I will:
+
+* Describe functional programming concepts
+* Write functional programming code using `purrr` package in R
+
+
+As the field of data science evolves, it has become clear that software development skills are essential for producing useful data science results and products. Even in research, learning to think computationally can help bridge the systemic skill gap between the discipline and the technology. For many (including myself), the focus is primarily on data science, statistics, and programming on a smaller scale early on in their data science journey. However, as you take on more complex projects, it gets more and more important to structure your code well. Once we structure it well, we gain:
+
+
+* better maintainability for the codebase;
+* safer, reliable, composable code;
+* the ability to manage complexity with abstractions that are borderline wizardry.
+
+
+Turns out, a paradigm of programming called *functional programming* is perfect for just this.
+
+# what is functional programming?
+
+There are many definitions for precisely what makes a language functional. However, in the simplest sense, functional programming refers to programming computers where *pure functions* serve as the primary mechanism for manipulating data. A function is said to be pure when it takes inputs, manipulates those inputs, and returns output, all without having to store some temporary or external state. This state is known as a side effect. 
+
+
+As a general rule, when writing pure functions, think of your code as if you were writing a mathematical function:
+
+- Does its result vary according to anything that isn’t supplied as a parameter? No
+
+- Does it alter any of the parameters that were supplied? No
+
+- Does it alter anything outside its scope? No
+
+- Is the result always the same for the same supplied parameters? Yes!
+
+Purely functional programming provides a guarantee inputs will always lead to predictable outputs.
+
+
+
+# the holy trinity of functional programming
+
+R does not guarantee that the functions you write are pure, but you can write most of your programs using only pure functions. By keeping your code mostly purely functional, you will write more robust code and code that is easier to modify when the need arises.
+
+We will just look at three general methods that are used in functional programming with the `purrr` package instead of loops and instead of explicitly writing recursive functions. They are really three different patterns for computing on sequences, and they come in different flavors in different functions, but just these three allow you do almost anything you would otherwise do with loops. Note the emphasis on almost!
+
+ 
+
+## map
+
+The .map function goes through every single element of a object(list or vectors) and applies a passed in function to each element. There is one VERY important point to pay attention to that's not talked about is that the .map function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a brand new list with the modified values.
+
+In the `purrr` package the `map()` function returns a list, while the `map_lgl()`, `map_chr()`, and `map_dbl()` functions return vectors of logical values, strings, or numbers respectively.
+
+## filter
+
+The .filter function goes through every single element of an array and checks if that element returns true or false when passed into the passed in function. If it returns true, we keep that element, otherwise we don't. 
+
+Just like .map, the .filter function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a new list  with just the elements that didn't get filtered out. So while your collection might shrink in size (or might not), you will still go through every single element without the option to *break* or *continue*.
+
+The group of functions that includes `keep()`, `discard()`, `every()`, and `some()` are known as filter functions. Each of these functions takes a vector and a predicate function.  A predicate function is a function that returns TRUE or FALSE.  For `keep()` only the elements of the vector that satisfy the predicate function are returned while all other elements are removed:
+
+```{r}
+library(purrr)
+keep(1:20, function(x){
+  x %% 2 == 0
+})
+```
+
+##  reduce
+
+The reduce function will also go through every single element of an array BUT in this case it will not return you another collection, but a single element.
+
+
+`reduce` and  `accumulate`
+
+
+```{r}
+cumsum(1:6)
+
+Reduce(f = "+", x = 1:6, accumulate = TRUE)
+```
+
+

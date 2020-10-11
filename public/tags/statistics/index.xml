@@ -1,26 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistics on Welcome</title>
+    <title>statistics on Welcome</title>
     <link>/tags/statistics/</link>
-    <description>Recent content in Statistics on Welcome</description>
+    <description>Recent content in statistics on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>what does a personalized clinical trial look like?(Draft)</title>
-      <link>/post/biostatistics/</link>
-      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/biostatistics/</guid>
-      <description>For many decades, randomized controlled trials have been the gold standard for clinical trials. You take a group of people with some condition, and you randomly assign each of those people to one of two (or more) treatment groups. These groups are then compared on a predefined measured response. Ideally, noone – not the researcher, not the patients – knows who is in which group until the end of the study.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>getting started with bayesian inference</title>
       <link>/post/getting-started-with-bayesian-inference/</link>
