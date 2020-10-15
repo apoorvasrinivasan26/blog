@@ -14,8 +14,8 @@
       <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/nicer-code-with-functional-programming/</guid>
-      <description>In this blogpost, I will:
- Describe functional programming concepts Write functional programming code using purrr package in R  As the field of data science evolves, it has become clear that software development skills are essential for producing useful data science results and products. Even in research, learning to think computationally can help bridge the systemic skill gap between the discipline and the technology. For many (including myself), the focus is primarily on data science, statistics, and programming on a smaller scale early on in their data science journey.</description>
+      <description>At the end of this blog post, you will be able to:
+ Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
     </item>
     
     <item>

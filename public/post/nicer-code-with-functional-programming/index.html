@@ -49,8 +49,8 @@ programming,
 />
 <meta
   name="twitter:description"
-  content="In this blogpost, I will:
- Describe functional programming concepts Write functional programming code using purrr package in R  As the field of data science evolves, it has become clear that software development skills are essential for producing useful data science results and products. Even in research, learning to think computationally can help bridge the systemic skill gap between the discipline and the technology. For many (including myself), the focus is primarily on data science, statistics, and programming on a smaller scale early on in their data science journey.|"
+  content="At the end of this blog post, you will be able to:
+ Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.|"
 />
 <meta name="twitter:image:src" content="" />
 <meta name="twitter:domain" content="/post/nicer-code-with-functional-programming/" />
@@ -121,43 +121,63 @@ if (!doNotTrack) {
         
 
 
-<p>In this blogpost, I will:</p>
+<p>At the end of this blog post, you will be able to:</p>
 <ul>
 <li>Describe functional programming concepts</li>
 <li>Write functional programming code using <code>purrr</code> package in R</li>
 </ul>
-<p>As the field of data science evolves, it has become clear that software development skills are essential for producing useful data science results and products. Even in research, learning to think computationally can help bridge the systemic skill gap between the discipline and the technology. For many (including myself), the focus is primarily on data science, statistics, and programming on a smaller scale early on in their data science journey. However, as you take on more complex projects, it gets more and more important to structure your code well. Once we structure it well, we gain:</p>
+<p>If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</p>
+<p>Turns out, some software developers have been writing their code in a particular way called <strong>functional programming</strong> that is an excellent fit for doing data analysis. By applying some basic concepts of functional programming, we gain:</p>
 <ul>
-<li>better maintainability for the codebase;</li>
-<li>safer, reliable, composable code;</li>
+<li>better maintainability of the code base;</li>
+<li>safer and reliable code;</li>
 <li>the ability to manage complexity with abstractions that are borderline wizardry.</li>
 </ul>
-<p>Turns out, a paradigm of programming called <em>functional programming</em> is perfect for just this.</p>
 <div id="what-is-functional-programming" class="section level1">
 <h1>what is functional programming?</h1>
-<p>There are many definitions for precisely what makes a language functional. However, in the simplest sense, functional programming refers to programming computers where <strong>pure functions</strong> serve as the primary mechanism for manipulating data. A function is said to be pure when it takes inputs, manipulates those inputs, and returns output, all without having to store some temporary or external state. This state is known as a <strong>side effect</strong>.</p>
-<p>As a general rule, when writing pure functions, think of your code as if you were writing a mathematical function:</p>
+<p>Functional programming is exactly what it sounds like– programming in functions(duh). But what makes it a <em>functional language</em> and so powerful is that there is strong emphasis on writing code where functions are considered the “building blocks” and these functions follow certain core tenets. Some of them are:</p>
 <ul>
-<li><p>Does its result vary according to anything that isn’t supplied as a parameter? No</p></li>
-<li><p>Does it alter any of the parameters that were supplied? No</p></li>
-<li><p>Does it alter anything outside its scope? No</p></li>
-<li><p>Is the result always the same for the same supplied parameters? Yes!</p></li>
+<li>Functions are pure</li>
+<li>Functions use immutable data</li>
+<li>Functions are first-class entities</li>
 </ul>
-<p>Purely functional programming provides a guarantee inputs will always lead to predictable outputs.</p>
+<p>To learn more about other concepts of functional programming, check out <a href="https://www.amazon.com/Functional-Programming-Advanced-Statistical-Analysis-ebook/dp/B06XX7YL7M">this</a> book by Thoman Mailund</p>
+<div id="functions-are-pure" class="section level2">
+<h2>functions are pure</h2>
+<p>In the simplest sense, functional programming is a way of writing code where <strong>pure functions</strong> serve as the primary mechanism for manipulating data. A function is said to be pure when:</p>
+<ul>
+<li><p>Its output only depends on its inputs: when you input a value, the output is always the same. In R, this means base functions like <code>sqrt()</code>, <code>log()</code> are pure functions and <code>runif()</code>, <code>read.csv()</code>, <code>Sys.time()</code> are impure since they return different values.</p></li>
+<li><p>The function does not cause any observable <strong>side effects</strong>, such as changing the value of a global variable, writing to disk, or displaying to the screen. In R, they’re functions like <code>print()</code>, <code>write.csv()</code> and <code>&lt;-</code>.</p></li>
+</ul>
+<p>This makes pure functions a lot like mathematical functions. They are “self-contained” pieces of code that can provide a guarantee inputs will always lead to predictable outputs. Once we have a pure function, we can use it over and over again for a specific task.</p>
+</div>
+<div id="functions-use-immutable-data" class="section level2">
+<h2>functions use immutable data</h2>
+<p>The data in functional programming is <strong>immutable</strong>– meaning you can’t update, rewrite or erase it over time. Rather than changing data they take in, functions in functional programming take in data as input and produce new values as output.</p>
+</div>
+<div id="functions-are-first-class-entities" class="section level2">
+<h2>functions are first-class entities</h2>
+<p>Since we’re limited to functions in functional programming, they have to exhibit certain characteristics to achieve the same power, versatility, and functionality as objects and classes from OOP. They have to handle <em>behavior</em> and <em>logic</em>, while also being flexible enough to be treated
+as <em>values</em> and used as <em>data</em>. It’s this front-and-center, first-class behavior that earns the name <strong>first-class citizens</strong> for functions in functional programming.</p>
+<p>If that didn’t make a lot of sense, don’t worry! All you need to understand is that functions are treated no differently than data. Put another way, functions in functional programming can be passed around as easily as data. You can refer to them from constants and variables, pass them as parameters to other functions, and return them as results from other functions.</p>
+<p>By treating functions as nothing more special than a piece of data and by only using data that is immutable, we are given a lot more freedom in terms of how we can use functions.</p>
+<p>It allows us to create small, independent functions that can be reused and combined together to build up increasingly complex logic. We can break any complex problem down into smaller sub-problems, solve them using functions, and finally combine them together to solve the bigger problem. 🤯</p>
+</div>
 </div>
 <div id="the-holy-trinity-of-functional-programming" class="section level1">
 <h1>the holy trinity of functional programming</h1>
-<p>R does not guarantee that the functions you write are pure, but you can write most of your programs using only pure functions. By keeping your code mostly purely functional, you will write more robust code and code that is easier to modify when the need arises.</p>
-<p>We will just look at three general methods that are used in functional programming with the <code>purrr</code> package instead of loops and instead of explicitly writing recursive functions. They are really three different patterns for computing on sequences, and they come in different flavors in different functions, but just these three allow you do almost anything you would otherwise do with loops. Note the emphasis on almost!</p>
+<p>R does not guarantee that the functions you write are pure(for good reason, most functions in real world applications aren’t pure), but you can write most of your programs using only pure functions. By keeping your code mostly purely functional, you will write more robust code and code that is easier to modify when the need arises.</p>
+<p>There are three groups of functions that are essential for functional programming. These three patterns for computing on sequences(lists, vectors) come in different flavors in different functions, but just these three allow you do <em>almost</em> anything you would otherwise do with loops. We will explore each one of them a little bit more with the <code>purrr()</code> package.</p>
 <div id="map" class="section level2">
 <h2>map</h2>
-<p>The map function goes through every single element of a object(list or vectors) and applies a passed in function to each element. There is one VERY important point to pay attention to is that the .map function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a brand new list with the modified values.</p>
+<p>The map function goes through every single element of a list or a vector and applies a passed in function to each element. There is one VERY important point to pay attention to is that the map function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a brand new list with the modified values <em>without</em> changing the original list.</p>
 <p>In the <code>purrr</code> package the <code>map()</code> function returns a list, while the <code>map_lgl()</code>, <code>map_chr()</code>, and <code>map_dbl()</code> functions return vectors of logical values, strings, or numbers respectively.</p>
 <pre class="r"><code>library(purrr)
-map_lgl(c(1, 2, 3, 4, 5), function(x){
-  x &gt; 3
+
+map_lgl(c(1, 2, 3, 4, 5, 6, 7, 8), function(x){
+  x &gt; 5
 })</code></pre>
-<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE</code></pre>
 <pre class="r"><code>map_chr(c(5, 4, 3, 2, 1), function(x){
   c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;)[x]
 })</code></pre>
@@ -167,23 +187,28 @@ map_lgl(c(1, 2, 3, 4, 5), function(x){
 <pre><code>##  [1] &quot;a 1&quot;  &quot;b 2&quot;  &quot;c 3&quot;  &quot;d 4&quot;  &quot;e 5&quot;  &quot;f 6&quot;  &quot;g 7&quot;  &quot;h 8&quot;  &quot;i 9&quot;  &quot;j 10&quot;
 ## [11] &quot;k 11&quot; &quot;l 12&quot; &quot;m 13&quot; &quot;n 14&quot; &quot;o 15&quot; &quot;p 16&quot; &quot;q 17&quot; &quot;r 18&quot; &quot;s 19&quot; &quot;t 20&quot;
 ## [21] &quot;u 21&quot; &quot;v 22&quot; &quot;w 23&quot; &quot;x 24&quot; &quot;y 25&quot; &quot;z 26&quot;</code></pre>
-<p>The <code>pmap()</code> family of functions is similar to <code>map2()</code>, however instead of mapping across two vectors or lists, you can map across any number of lists. The list argument is a list of lists that the function will map over, followed by the function that will applied:</p>
+<p>The <code>pmap()</code> family of functions is similar to <code>map2()</code>, however instead of mapping across two vectors or lists, you can map across any number of lists. The list argument is a list of lists that the function will map over, followed by the function that will be applied:</p>
 <pre class="r"><code>pmap_chr(list(
   list(1, 2, 3),
-  list(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;),
-  list(&quot;uno&quot;, &quot;dos&quot;, &quot;tres&quot;)
+  list(&quot;new york&quot;, &quot;london&quot;, &quot;paris&quot;),
+  list(&quot;bagel&quot;, &quot;tea&quot;, &quot;crossiant&quot;)
 ), paste)</code></pre>
-<pre><code>## [1] &quot;1 one uno&quot;    &quot;2 two dos&quot;    &quot;3 three tres&quot;</code></pre>
+<pre><code>## [1] &quot;1 new york bagel&quot;  &quot;2 london tea&quot;      &quot;3 paris crossiant&quot;</code></pre>
 </div>
 <div id="filter" class="section level2">
 <h2>filter</h2>
 <p>The filter function goes through every single element of an array and checks if that element returns true or false when passed into the passed in function. If it returns true, we keep that element, otherwise we don’t.</p>
-<p>Just like map, the filter function goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a new list with just the elements that didn’t get filtered out.</p>
-<p>The group of functions that includes <code>keep()</code>, <code>discard()</code>, <code>every()</code>, and <code>some()</code> are known as filter functions. Each of these functions takes a vector and a predicate function. A predicate function is a function that returns <code>TRUE</code> or <code>FALSE</code>. For <code>keep()</code> only the elements of the vector that satisfy the predicate function are returned while all other elements are removed:</p>
+<p>Just like map, the filter function also goes through EVERY 👏 SINGLE 👏 ELEMENT 👏 and returns a new list with just the elements that didn’t get filtered out.</p>
+<p>The group of functions that includes <code>keep()</code>, <code>discard()</code>, <code>every()</code> and <code>some()</code> are known as filter functions. Each of these functions takes a vector and a predicate function. A predicate function is a function that returns <code>TRUE</code> or <code>FALSE</code>. For <code>keep()</code> only the elements where the predicate function evaluates to <code>TRUE</code> are returned while all other elements are removed:</p>
 <pre class="r"><code>keep(1:20, function(x){
   x %% 2 == 0
 })</code></pre>
 <pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
+<p><code>discard()</code> returns the elements where the <code>predicate()</code> function evaluates to <code>FALSE</code></p>
+<pre class="r"><code>discard(1:20, function(x){
+  x %% 2 == 0
+})</code></pre>
+<pre><code>##  [1]  1  3  5  7  9 11 13 15 17 19</code></pre>
 </div>
 <div id="reduce" class="section level2">
 <h2>reduce</h2>
@@ -192,9 +217,20 @@ map_lgl(c(1, 2, 3, 4, 5), function(x){
 <pre><code>## [1]  1  3  6 10 15 21</code></pre>
 <pre class="r"><code>Reduce(f = &quot;+&quot;, x = 1:6, accumulate = FALSE)</code></pre>
 <pre><code>## [1] 21</code></pre>
-<p>From the example above, <code>Reduce</code> combines the first element of a vector with the second element of a vector, then that combined result is combined with the third element of the vector, and so on until the end of the vector is reached.
-Setting <code>accumulate = FALSE</code> only returns the final result.</p>
+<p>As shown in the example above, <code>Reduce</code> combines the first element of a vector with the second element of a vector, then that combined result is combined with the third element of the vector, and so on until the end of the vector is reached. Setting <code>accumulate = FALSE</code> only returns the final result.</p>
 </div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>conclusion</h1>
+<p>Although functional programming may seem overly restrictive (no loops, no mutating data, no impure functions) at first, it’s an extremely efficient way to write powerful and concise code. By combining the powers of <code>purrr</code> with <code>tidyverse</code>, we can condense entire algorithms to just a few lines of code that are easy to debug, test and maintain.</p>
+</div>
+<div id="further-reading" class="section level1">
+<h1>further reading</h1>
+<ul>
+<li><a href="https://adv-r.hadley.nz/fp.html">Hadley Wickam’s Chapter on Functional Programming in Advanced R</a></li>
+<li><a href="http://www.rebeccabarter.com/blog/2019-08-19_purrr/">Rebecca Barter’s learn to purrr</a></li>
+<li><a href="https://bookdown.org/rdpeng/RProgDA/functional-programming.html">mastering software development in R</a></li>
+</ul>
 </div>
 
       </article>
