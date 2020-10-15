@@ -148,17 +148,18 @@ discard(1:20, function(x){
 
 ##  reduce
 
-The `Reduce` function will also go through every single element of an array BUT in this case it will not return you another collection, but a single element.
+The `reduce` function will also go through every single element of an array BUT in this case it will not return you another collection, but a single element.
 
 
 ```{r}
 
-Reduce(f = "+", x = 1:6, accumulate = TRUE)
+1:6 %>%
+  reduce(`+`)
 
-Reduce(f = "+", x = 1:6, accumulate = FALSE)
+
 ```
 
-As shown in the example above, `Reduce` combines the first element of a vector with the second element of a vector, then that combined result is combined with the third element of the vector, and so on until the end of the vector is reached. Setting `accumulate = FALSE` only returns the final result.
+As shown in the example above, `reduce` combines the first element of a vector with the second element of a vector, then that combined result is combined with the third element of the vector, and so on until the end of the vector is reached. 
 
 
 # conclusion
