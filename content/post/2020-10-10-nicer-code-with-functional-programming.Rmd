@@ -31,7 +31,7 @@ Turns out, some software developers have been writing their code in a particular
 
 # what is functional programming?
 
-Functional programming is exactly what it sounds like-- programming in functions. But what makes it a *functional language* and so powerful is that there is strong emphasis on writing code where functions are considered the "building blocks" and these functions follow certain core tenets. Some of them are:
+Functional programming is exactly what it sounds like-- programming in functions.🙄  But what makes it a *functional language* and so powerful is that there is strong emphasis on writing code where functions are considered the "building blocks" and these functions follow certain core tenets. Some of them are:
 
 * Functions are pure
 * Functions use immutable data
