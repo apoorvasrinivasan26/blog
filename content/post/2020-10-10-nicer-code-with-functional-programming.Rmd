@@ -1,7 +1,7 @@
 ---
 title: niceR code with functional programming
 author: ''
-date: '2020-10-10'
+date: '2020-10-15'
 slug: nicer-code-with-functional-programming
 categories:
   - Development
@@ -19,6 +19,7 @@ At the end of this blog post, you will be able to:
 
 
 If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as  you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.
+
 
 Turns out, some software developers have been writing their code in a particular way called **functional programming** that is an excellent fit for doing data analysis. By applying some basic concepts of functional programming, we gain:
 
