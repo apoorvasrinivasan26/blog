@@ -1,120 +1,15 @@
-<!DOCTYPE html>
-<html
-  class=""
-  lang="en-us"
-  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
->
-  <head>
-    <meta charset="utf-8" />
+---
+title: introduction to hypothesis testing
+author: ''
+date: '2020-06-06'
+slug: hypothesis-testing
+categories: [statistics]
+tags: []
+description: ''
+---
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="description" content="" />
-<meta name="HandheldFriendly" content="True" />
-<meta name="MobileOptimized" content="320" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-<meta name="keywords" content="">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:description" content="" />
-<meta property="og:title" content="introduction to hypothesis testing" />
-<meta property="og:site_name" content="Welcome" />
-<meta property="og:image" content="" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="" />
-<meta property="og:image:height" content="" />
-<meta property="og:url" content="https://apoorvasrinivasanblog.com/post/hypothesis-testing/" />
-<meta property="og:locale" content="en-us" />
-<meta property="article:published_time" content="2020-06-06
-" /> <meta property="article:modified_time" content="2020-06-06
-" />
-
-
-
-
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@siegerts" />
-<meta name="twitter:creator" content="@siegerts" />
-<meta
-  name="twitter:title"
-  content="introduction to hypothesis testing | Welcome"
-/>
-<meta
-  name="twitter:description"
-  content="Hello and welcome to my brand new website! I’ve started this blog to think through various statistical concepts and techniques and hopefully they’ll be useful to you too. Let’s start with every statisticians favorite flex: hypothesis testing
-There’s two main branches of statistics. One, where we analyze and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. This is called inferential statistics and hypothesis testing is an important part of it.|"
-/>
-<meta name="twitter:image:src" content="" />
-<meta name="twitter:domain" content="https://apoorvasrinivasanblog.com/post/hypothesis-testing/" />
-
-
-
-    <title>introduction to hypothesis testing</title>
-    <link rel="canonical" href="https://apoorvasrinivasanblog.com/post/hypothesis-testing/" />
-
-
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
-/>
-
-<link rel="stylesheet" href="https://apoorvasrinivasanblog.comcss/style.css" />
-
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
-/>
-
-
-<script type="application/javascript">
-var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-var doNotTrack = (dnt == "1" || dnt == "yes");
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	if (window.sessionStorage) {
-		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
-		ga('create', 'UA-XXXXXXXXX-X', {
-	    'storage': 'none',
-	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
-	   });
-	   ga(function(tracker) {
-	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
-	   });
-   }
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  </head>
-
-
-<body
-  lang="en-us"
-  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
-  itemscope
-  itemtype="http://schema.org/Article"
->
-  
-  <span class="b">/ </span>
-  <a href="https://apoorvasrinivasanblog.com" class="b bb bw1 pb1 no-underline black">Welcome</a>
-  <span class="b"> / </span>
-  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
-
-  <section id="main" class="mt5">
-    <h1 itemprop="name" id="title">introduction to hypothesis testing</h1>
-    <span class="f6 gray">June 6, 2020</span>
-
-      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
-        
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <script type="text/javascript"
@@ -143,7 +38,7 @@ dat &lt;- data.frame(y = c(y1, y2), x = x)
     
 boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
         xlab = &#39;coffee drinking status&#39;, ylab = &#39;height&#39;)</code></pre>
-<p><img src="/post/hypothesis-testing_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="public/post/hypothesis-testing_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>It seems like the the sample mean height of people that drink coffee is lower than those who don’t. Does that conclude our study? Should we call it a day?</p>
 </div>
 <div id="why-use-hypothesis-tests" class="section level2">
@@ -173,8 +68,8 @@ boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
 <p>The <strong>alternative hypothesis</strong>, denoted by <span class="math inline">\(H_1\)</span>, is the competing claim (we often set up hypotheses in hopes of showing that <span class="math inline">\(H_1\)</span> is true).</p>
 <p>In carrying out a hypothesis test of <span class="math inline">\(H_0\)</span> versus <span class="math inline">\(H_1\)</span>, the hypothesis <span class="math inline">\(H_0\)</span> is rejected in favor of <span class="math inline">\(H_1\)</span> only if sample evidence strongly suggests that <span class="math inline">\(H_0\)</span> is false. If the sample does not provide such evidence, then <span class="math inline">\(H_0\)</span> is not rejected.</p>
 <p>Therefore the two possible <strong>outcomes</strong> of a hypothesis test are <em>reject <span class="math inline">\(H_0\)</span></em> or <em>fail to reject <span class="math inline">\(H_0\)</span></em> (in some cases we say “fail to reject <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_1\)</span>”).</p>
-<p>❗ ❗ failing to reject H0 does not mean that we accept H0. ❗ ❗</p>
-<p>✏ Many people have found an analogy between hypothesis testig and court room to be useful where</p>
+<p>:exclamation: :exclamation: failing to reject H0 does not mean that we accept H0. :exclamation: :exclamation:</p>
+<p>:pencil: Many people have found an analogy between hypothesis testig and court room to be useful where</p>
 <ul>
 <li>A hypothesis test is like holding a trial (going to court)</li>
 <li><span class="math inline">\(H_0\)</span> is assumed true (innocent) until ”proven” otherwise (guilty)</li>
@@ -197,7 +92,7 @@ boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
 <p>In keeping with the jury example,</p>
 <p>Type 1 error ==&gt; say guilty, when in fact, not guilty</p>
 <p>Type 2 error ==&gt; say not guilty, when in fact, guilty</p>
-<p>❗ ❗ Neglecting to think adequately about possible consequences of Type I and Type II errors can lead to severe consequence. this trade off should be made based on the context of the problem ❗ ❗</p>
+<p>:heavy_exclamation_mark: :heavy_exclamation_mark: Neglecting to think adequately about possible consequences of Type I and Type II errors can lead to severe consequence. this trade off should be made based on the context of the problem :heavy_exclamation_mark: :heavy_exclamation_mark:</p>
 <p><img src="/post/hypothesis-testing_files/errors_redone.png" alt="final image" width="800" class="center"/></p>
 <p><em>but what does setting a significance level mean?</em></p>
 <p>It represents our tolerance for type 1 error. It’s usually repesented by <span class="math inline">\(\alpha\)</span>. Ideally, we want to choose a significance level that minimizes the likelihood of one of these errors.i.e. a very small significance level. Significance levels such as 0.05 and 0.01 are common in most fields.</p>
@@ -250,33 +145,3 @@ boxplot(y ~ x, dat, col = c(&#39;red&#39;, &#39;grey&#39;),
 </ul>
 </div>
 </div>
-
-      </article>
-
-      
-      <span class="f6 gray mv3" title="Lastmod: June 6, 2020. Published at: 2020-06-06.">
-        
-      </span>
-
-      
-
-  </section>
-
-  <footer>
-    <div>
-      <p class="f6 gray mt6 lh-copy">
-        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>.
-      </p>
-    </div>
-  </footer>
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
-
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-
-
-  </body>
-</html>

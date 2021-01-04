@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome</title>
-    <link>/</link>
+    <link>https://apoorvasrinivasanblog.com/</link>
     <description>Recent content on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://apoorvasrinivasanblog.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>niceR code with functional programming</title>
-      <link>/post/nicer-code-with-functional-programming/</link>
+      <link>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/nicer-code-with-functional-programming/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</guid>
       <description>At the end of this blog post, you will be able to:
  Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
     </item>
     
     <item>
       <title>data science interview questions and resources</title>
-      <link>/post/data-science-interview-questions-and-resources/</link>
+      <link>https://apoorvasrinivasanblog.com/post/data-science-interview-questions-and-resources/</link>
       <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/data-science-interview-questions-and-resources/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/data-science-interview-questions-and-resources/</guid>
       <description>As a recent graduate, I spent a better part of this year applying and interviewing for data science jobs. By going through a process of hundreds of applications, a dozen phone screens and four final rounds of interviews, I have accumulated a significant amount of resources and questions that have helped me prepare and land my dream data scientist role. Organized by categorizies, you will find over 50 interview questions along with some resources to help you brush up your skills and crush that interview!</description>
     </item>
     
     <item>
       <title>getting started with bayesian inference</title>
-      <link>/post/getting-started-with-bayesian-inference/</link>
+      <link>https://apoorvasrinivasanblog.com/post/getting-started-with-bayesian-inference/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/getting-started-with-bayesian-inference/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/getting-started-with-bayesian-inference/</guid>
       <description>In my previous post, we spoke about hypothesis testing from a frequentist perspective. This is the method that is commonly taught in STAT101 classes. But for many decades, some statisticians have argued for another approach to conduct statistical analysis based on bayes theorem.
 As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I’ve learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you’re familiar with frequentist methods.</description>
     </item>
     
     <item>
       <title>introduction to hypothesis testing</title>
-      <link>/post/hypothesis-testing/</link>
+      <link>https://apoorvasrinivasanblog.com/post/hypothesis-testing/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/hypothesis-testing/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/hypothesis-testing/</guid>
       <description>Hello and welcome to my brand new website! I’ve started this blog to think through various statistical concepts and techniques and hopefully they’ll be useful to you too. Let’s start with every statisticians favorite flex: hypothesis testing
 There’s two main branches of statistics. One, where we analyze and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. This is called inferential statistics and hypothesis testing is an important part of it.</description>
     </item>
     
     <item>
       <title>on edward jenner and creativity</title>
-      <link>/post/on-edward-jenner-and-creativity/</link>
+      <link>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/on-edward-jenner-and-creativity/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</guid>
       <description>One common question that’s on everyone’s minds as we fiercely scrub our hands, pool our resources, conserve our consumption, stock up (but not hoard), invent calculus or write King Lear is: when will this end? Nobody knows what the answer to that question is but we are all in agreement that it could be in the faraway promise land of vaccines.
 Although vaccination now is a common method to provide long-term protection against a disease, it was unheard of until about 200 years ago.</description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>/project/hugo/</link>
+      <link>https://apoorvasrinivasanblog.com/project/hugo/</link>
       <pubDate>Sun, 10 Feb 2019 16:53:06 -0500</pubDate>
       
-      <guid>/project/hugo/</guid>
+      <guid>https://apoorvasrinivasanblog.com/project/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About Me</title>
-      <link>/about/</link>
+      <link>https://apoorvasrinivasanblog.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://apoorvasrinivasanblog.com/about/</guid>
       <description>Hello! This is Apoorva Srinivasan&amp;rsquo;s blog. I am a data scientist at Columbia University Department of Psychiatry. Previously, I earned my masters in biostatisitcs from Columbia University and a bachelors degree in Biotechnology from Manipal Institute of Technology.
 Here is my main website.
 You can also follow me on Twitter or check out my GitHub</description>

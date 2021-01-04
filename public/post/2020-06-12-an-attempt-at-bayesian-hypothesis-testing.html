@@ -1,126 +1,19 @@
-<!DOCTYPE html>
-<html
-  class=""
-  lang="en-us"
-  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
->
-  <head>
-    <meta charset="utf-8" />
+---
+title: getting started with bayesian inference
+author: ''
+date: '2020-06-27'
+slug: getting-started-with-bayesian-inference
+categories:
+  - statistics
+tags:
+  - statistics
+  - R
+  - bayesian
+description: ''
+---
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="description" content="" />
-<meta name="HandheldFriendly" content="True" />
-<meta name="MobileOptimized" content="320" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-<meta name="keywords" content="statistics,
-R,
-bayesian,
-">
-
-
-<meta property="og:type" content="article" />
-<meta property="og:description" content="" />
-<meta property="og:title" content="getting started with bayesian inference" />
-<meta property="og:site_name" content="Welcome" />
-<meta property="og:image" content="" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="" />
-<meta property="og:image:height" content="" />
-<meta property="og:url" content="https://apoorvasrinivasanblog.com/post/getting-started-with-bayesian-inference/" />
-<meta property="og:locale" content="en-us" />
-<meta property="article:published_time" content="2020-06-27
-" /> <meta property="article:modified_time" content="2020-06-27
-" />
-
-
-<meta property="article:tag" content="statistics" />
-<meta property="article:tag" content="R" />
-<meta property="article:tag" content="bayesian" />
-
-
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@siegerts" />
-<meta name="twitter:creator" content="@siegerts" />
-<meta
-  name="twitter:title"
-  content="getting started with bayesian inference | Welcome"
-/>
-<meta
-  name="twitter:description"
-  content="In my previous post, we spoke about hypothesis testing from a frequentist perspective. This is the method that is commonly taught in STAT101 classes. But for many decades, some statisticians have argued for another approach to conduct statistical analysis based on bayes theorem.
-As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I’ve learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you’re familiar with frequentist methods.|"
-/>
-<meta name="twitter:image:src" content="" />
-<meta name="twitter:domain" content="https://apoorvasrinivasanblog.com/post/getting-started-with-bayesian-inference/" />
-
-
-
-    <title>getting started with bayesian inference</title>
-    <link rel="canonical" href="https://apoorvasrinivasanblog.com/post/getting-started-with-bayesian-inference/" />
-
-
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/tachyons@4.11.1/css/tachyons.min.css"
-/>
-
-<link rel="stylesheet" href="https://apoorvasrinivasanblog.comcss/style.css" />
-
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/highlightjs@9.12.0/styles/github-gist.css"
-/>
-
-
-<script type="application/javascript">
-var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-var doNotTrack = (dnt == "1" || dnt == "yes");
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	if (window.sessionStorage) {
-		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
-		ga('create', 'UA-XXXXXXXXX-X', {
-	    'storage': 'none',
-	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
-	   });
-	   ga(function(tracker) {
-	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
-	   });
-   }
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  </head>
-
-
-<body
-  lang="en-us"
-  class="sans-serif w-90 w-80-m w-60-ns center mv2 mv5-ns"
-  itemscope
-  itemtype="http://schema.org/Article"
->
-  
-  <span class="b">/ </span>
-  <a href="https://apoorvasrinivasanblog.com" class="b bb bw1 pb1 no-underline black">Welcome</a>
-  <span class="b"> / </span>
-  <a href="/post" class="b bb bw1 pb1 no-underline black">blog</a>
-
-  <section id="main" class="mt5">
-    <h1 itemprop="name" id="title">getting started with bayesian inference</h1>
-    <span class="f6 gray">June 27, 2020</span>
-
-      <article itemprop="articleBody" id="content" class="w-90 lh-copy">
-        
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <script type="text/javascript"
@@ -156,14 +49,14 @@ if (!doNotTrack) {
 <p>Let’s assume you don’t know anything about the prevalence of flu. So you’ll probably pick a prior where all probabilities are equally likely. This is called an <strong>uninformed prior</strong> and it looks something like the plot below</p>
 <p><plot the prior plot></p>
 <pre class="r"><code>plot.beta(1,1,ymax=3.2,main=&quot;Uniform Prior, Beta(1,1)&quot;)</code></pre>
-<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="public/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Wanting to gain a little more information you roll over, grab your phone
 and search Google. You find an article that says that only 12% of the
 population will get the flu in a given year. But another article says that the prevalence could be a little higher. In this case a distribution of our prior belief might be more appropriate to incorporate our uncertainity. This distribution is known as the <strong>prior distribution</strong>. In particular, this is called an <strong>informed prior</strong> distribution because you are incorporating your previous beliefs in the model</p>
 <p><plot another prior dist></p>
 <pre class="r"><code>plot.beta(12,88,ymax=15,main=&quot;Informed Prior, Beta(12, 88)&quot;)</code></pre>
-<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>✏
+<p><img src="public/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>:pencil:
 In Bayesian inference, the beta distribution is the conjugate prior probability distribution for the binomial distribution. Computing a posterior using a conjugate prior is very convenient, because you can avoid expensive numerical computation. You can learn more about conjugate priors <a href="https://towardsdatascience.com/conjugate-prior-explained-75957dc80bfb">here</a></p>
 </div>
 <div id="likelihood" class="section level1">
@@ -178,7 +71,7 @@ plot(x, y2, xlim=c(0,1), ylim=c(0, 1.25 * max(y2,1.6)), type = &quot;l&quot;, yl
      cex.lab=1.5, cex.main=1.5, col = &quot;cyan3&quot;, axes=FALSE)
 axis(1, at = seq(0,1,.2)) #adds custom x axis
 axis(2, las=1) # custom y axis</code></pre>
-<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="public/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>The Likelihood Principle states that the likelihood function contains all of the information relevant to the evaluation of statistical evidence. In other words, facets of the data that do not factor into the likelihood function are irrelevant to the evaluation of the strength of the statistical evidence. The likelihood function is the most compact summary of the data that does not loose information.</p>
 <div id="is-likelihood-a-probability" class="section level3">
 <h3>is likelihood a probability?</h3>
@@ -197,10 +90,10 @@ axis(2, las=1) # custom y axis</code></pre>
 <p>Sometimes also called as the evidence, P(data) is simply just a constant, particularly it is a normalizing constant. You’ve already observed the data so you can calculate P(data). One of the necessary conditions for a probability distribution is that the sum of all possible outcomes of an event is equal to 1. The normalising constant makes sure that the resulting posterior distribution is a true probability distribution by ensuring that the sum or integral of the distribution is equal to 1.</p>
 <p>Coming back to our example, so far we have two distributions: prior and likelihood. We can get the posterior by multiplying the two. The resulting distribution is shown below</p>
 <pre class="r"><code>plot.beta(1,1,31,71,ymax=10,main=&quot;Beta(1,1) to Beta(31,71)&quot;)</code></pre>
-<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="public/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>With the uniform prior, the posterior falls right on top of the likelihood function. In the plot above, the likelihood is nearly invisible because the posterior sits right on top of it. When the prior has only 1 or 2 data points worth of information, it has essentially no impact on the posterior shape</p>
 <pre class="r"><code>plot.beta(12,88,42,158,ymax=15,main=&quot;Beta(12,88) to Beta(42,158)&quot;)</code></pre>
-<p><img src="/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="public/post/2020-06-12-an-attempt-at-bayesian-hypothesis-testing_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>The second plot above shows how the posterior splits the difference between the likelihood and the informed prior. My takeaway is that the the probability of having the flu based on the data you’ve collected is about 20% which is slightly higher than the prior.</p>
 <p>Now we have the posterior distribution, we can derive statistics from it. For example, we could use the expected value of the distribution. Or we could calculate the variance to quantify our uncertainty about our conclusion. One of the most common statistics calculated from the posterior distribution is the mode. This is often used as the estimate of the true value for the parameter of interest and is known as the Maximum a posteriori probability estimate or simply, the MAP estimate. But that’s for another time</p>
 </div>
@@ -219,33 +112,3 @@ axis(2, las=1) # custom y axis</code></pre>
 <li><a href="https://github.com/ericmjl/bayesian-analysis-recipes">bayesian analysis recipes</a></li>
 </ul>
 </div>
-
-      </article>
-
-      
-      <span class="f6 gray mv3" title="Lastmod: June 27, 2020. Published at: 2020-06-27.">
-        
-      </span>
-
-      
-
-  </section>
-
-  <footer>
-    <div>
-      <p class="f6 gray mt6 lh-copy">
-        © 2016-19 <a href='https://github.com/siegerts/hugo-theme-basic'>Hugo Theme Basic</a>. Made by <a href='https://twitter.com/siegerts'>@siegerts</a>.
-      </p>
-    </div>
-  </footer>
-  
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
-
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-
-
-  </body>
-</html>

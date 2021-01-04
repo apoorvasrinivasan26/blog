@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on Welcome</title>
-    <link>/tags/programming/</link>
+    <link>https://apoorvasrinivasanblog.com/tags/programming/</link>
     <description>Recent content in programming on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://apoorvasrinivasanblog.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>niceR code with functional programming</title>
-      <link>/post/nicer-code-with-functional-programming/</link>
+      <link>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/nicer-code-with-functional-programming/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</guid>
       <description>At the end of this blog post, you will be able to:
  Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
     </item>

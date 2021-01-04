@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Welcome</title>
-    <link>/categories/development/</link>
+    <link>https://apoorvasrinivasanblog.com/categories/development/</link>
     <description>Recent content in Development on Welcome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://apoorvasrinivasanblog.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>niceR code with functional programming</title>
-      <link>/post/nicer-code-with-functional-programming/</link>
+      <link>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/nicer-code-with-functional-programming/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</guid>
       <description>At the end of this blog post, you will be able to:
  Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
     </item>
     
     <item>
       <title>data science interview questions and resources</title>
-      <link>/post/data-science-interview-questions-and-resources/</link>
+      <link>https://apoorvasrinivasanblog.com/post/data-science-interview-questions-and-resources/</link>
       <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/data-science-interview-questions-and-resources/</guid>
+      <guid>https://apoorvasrinivasanblog.com/post/data-science-interview-questions-and-resources/</guid>
       <description>As a recent graduate, I spent a better part of this year applying and interviewing for data science jobs. By going through a process of hundreds of applications, a dozen phone screens and four final rounds of interviews, I have accumulated a significant amount of resources and questions that have helped me prepare and land my dream data scientist role. Organized by categorizies, you will find over 50 interview questions along with some resources to help you brush up your skills and crush that interview!</description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>/project/hugo/</link>
+      <link>https://apoorvasrinivasanblog.com/project/hugo/</link>
       <pubDate>Sun, 10 Feb 2019 16:53:06 -0500</pubDate>
       
-      <guid>/project/hugo/</guid>
+      <guid>https://apoorvasrinivasanblog.com/project/hugo/</guid>
       <description></description>
     </item>
     
