@@ -32,7 +32,6 @@ A hypothesis is simply just a question about something in the world around you t
 * Does eating jelly bean cause acne?
 * Does coffee stunt your growth?
 
-
 Let's say you're interested in finding out if coffee stunts your growth. Instead of collecting real data, we just simulate data for adolescent coffee drinkers, assuming a real effect of Cohen’s $\ d = 7/15$
 
 
