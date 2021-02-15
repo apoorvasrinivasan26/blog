@@ -18,15 +18,5 @@
 As someone who is new to this approach to statistics, my goal in this blogpost is to break down what I’ve learned about the basics of bayesian inference in a way that is (hopefully) easy to follow along if you’re familiar with frequentist methods.</description>
     </item>
     
-    <item>
-      <title>introduction to hypothesis testing</title>
-      <link>https://apoorvasrinivasanblog.com/post/hypothesis-testing/</link>
-      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://apoorvasrinivasanblog.com/post/hypothesis-testing/</guid>
-      <description>Hello and welcome to my brand new website! I’ve started this blog to think through various statistical concepts and techniques and hopefully they’ll be useful to you too. Let’s start with every statisticians favorite flex: hypothesis testing
-There’s two main branches of statistics. One, where we analyze and summarize the data we have. Other where we infer stuff about a population based on some sample data we collect. This is called inferential statistics and hypothesis testing is an important part of it.</description>
-    </item>
-    
   </channel>
 </rss>
