@@ -15,7 +15,7 @@
       
       <guid>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</guid>
       <description>At the end of this blog post, you will be able to:
- Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
+Describe functional programming concepts Write functional programming code using purrr package in R If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
     </item>
     
     <item>

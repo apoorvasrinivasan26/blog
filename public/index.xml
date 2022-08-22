@@ -15,7 +15,7 @@
       
       <guid>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</guid>
       <description>At the end of this blog post, you will be able to:
- Describe functional programming concepts Write functional programming code using purrr package in R  If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
+Describe functional programming concepts Write functional programming code using purrr package in R If you are anything like me, you probably focused primarily on learning statistics, machine learning and programming on a smaller scale early on in your data science journey. However, as you take on increasingly complex projects, you may find yourself thinking about more and more about structuring your project well and writing code that is easy to understand, debug, reuse, and maintain.</description>
     </item>
     
     <item>
@@ -53,8 +53,8 @@ Although vaccination now is a common method to provide long-term protection agai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://apoorvasrinivasanblog.com/about/</guid>
-      <description>Hello! This is Apoorva Srinivasan&amp;rsquo;s blog. I am a data scientist at Columbia University Department of Psychiatry. Previously, I earned my masters in Biostatisitcs from Columbia University and a bachelors degree in Biotechnology from Manipal Institute of Technology. I am interested in computational psychiatry, study design for clinical trials and digital health.
-You can also follow me on Twitter or check out my GitHub</description>
+      <description>Hello! My name is Apoorva. I&amp;rsquo;m a data scientist at Intervenn Biosciences where I work on detecting various diseases early with blood samples. Previously, I worked on detecting depression early with passive sensor smartphone data at the Auerbach Lab at Columbia University Department of Psychiatry. My educational background is in biostatistics from Columbia University and biotechnology engineering from Manipal Institute of Technology, India.
+I&amp;rsquo;m especially interested in computational biology, making the tools for doing science better, and reshaping our scientific institutions.</description>
     </item>
     
   </channel>

@@ -1,98 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://apoorvasrinivasanblog.com/categories/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/categories/development/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/post/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/programming/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/r/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/bayesian/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/post/getting-started-with-bayesian-inference/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/statistics/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/categories/statistics/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/thoughts/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/development/</loc>
     <lastmod>2019-02-10T16:53:06-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/project/hugo/</loc>
     <lastmod>2019-02-10T16:53:06-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/project/</loc>
     <lastmod>2019-02-10T16:53:06-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/series/</loc>
   </url>
-  
 </urlset>
