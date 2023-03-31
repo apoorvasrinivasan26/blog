@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # My blog 
 
 Built with blogdown and hugo
