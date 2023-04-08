@@ -2,10 +2,11 @@
 title: About Me
 ---
 
-Hello! My name is Apoorva.  I'm a data scientist at Intervenn Biosciences where I work on detecting various diseases early with blood samples. Previously, I worked on detecting depression early with passive sensor smartphone data at Columbia University Department of Psychiatry. My educational background is in biostatistics from Columbia University and biotechnology engineering from Manipal Institute of Technology, India.
-
-I'm especially passionate about computational biology, making the tools for accelerating science and increasing access to education. I'm also an avid reader and a yoga instructor. 
+Hello! My name is Apoorva. I'm currently building CurieLabs. Previously, I've built algorithms for early cancer detection at [Intervenn](https://intervenn.com/) and for detecting depression using passive sensor data from smartphones at [Columbia University](https://www.columbiapsychiatry.org/)
 
 
-You can also follow me on [Twitter](https://twitter.com/apoorvasriniva1) or check out my [GitHub](https://github.com/apoorvasrinivasan26)
+I'm passionate about computational biology, making the tools for accelerating science and increasing access to education. I'm also an [avid reader](https://www.goodreads.com/user/show/28709194-apoorva-srinivasan) and a yoga instructor. 
+
+
+You can also follow me on [Twitter](https://twitter.com/apoorvasriniva) or check out my [GitHub](https://github.com/apoorvasrinivasan26)
 
