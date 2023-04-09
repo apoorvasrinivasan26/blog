@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016-19 &lt;a href=&#39;https://github.com/siegerts/hugo-theme-basic&#39;&gt;Hugo Theme Basic&lt;/a&gt;. Made by &lt;a href=&#39;https://twitter.com/siegerts&#39;&gt;@siegerts&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://apoorvasrinivasanblog.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://apoorvasrinivasanblog.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>what-happened-since-human-genome-project</title>
+      <link>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</guid>
+      <description>When the human genome project was deemed “complete” in 2003, it was met with incredible fanfare. The entire project leading up to that moment had all the drama to keep its audience enthralled. Fierce rivalry between a public and private institution, multiple countries involved, 3.5 billion dollars at stake, and 13 years invested. It was a herculean effort and at the end of all that, we had decoded life itself and now had a map of the human genome.</description>
+    </item>
+    
     <item>
       <title>niceR code with functional programming</title>
       <link>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</link>
@@ -54,7 +63,8 @@ Although vaccination now is a common method to provide long-term protection agai
       
       <guid>https://apoorvasrinivasanblog.com/about/</guid>
       <description>Hello! My name is Apoorva. I&amp;rsquo;m currently building CurieLabs. Previously, I&amp;rsquo;ve built machine learning algorithms for early cancer detection at Intervenn and detecting depression using passive sensor data from smartphones at Columbia University.
-I&amp;rsquo;m passionate about ML/AI in biotech and healthcare, making tools for accelerating science and increasing access to education. I&amp;rsquo;m also an avid reader, an unremarkable writer, and a yoga instructor. I live in San Francisco with my cat, Softmax.</description>
+I&amp;rsquo;m passionate about ML/AI in biotech and healthcare, making tools for accelerating science and increasing access to education. I&amp;rsquo;m also an avid reader and a yoga instructor. I live in San Francisco with my cat, Softmax.
+You can connect with me on Twitter or check out my GitHub.</description>
     </item>
     
   </channel>

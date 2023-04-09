@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://apoorvasrinivasanblog.com/post/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://apoorvasrinivasanblog.com/tags/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://apoorvasrinivasanblog.com/tags/thoughts/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://apoorvasrinivasanblog.com/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://apoorvasrinivasanblog.com/categories/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,19 +26,10 @@
     <loc>https://apoorvasrinivasanblog.com/post/nicer-code-with-functional-programming/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://apoorvasrinivasanblog.com/post/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/programming/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/r/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://apoorvasrinivasanblog.com/tags/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://apoorvasrinivasanblog.com/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/bayesian/</loc>
@@ -39,9 +45,6 @@
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://apoorvasrinivasanblog.com/post/on-edward-jenner-and-creativity/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://apoorvasrinivasanblog.com/tags/thoughts/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://apoorvasrinivasanblog.com/tags/development/</loc>
