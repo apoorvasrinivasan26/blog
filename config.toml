@@ -39,3 +39,8 @@ description = "Basic personal site theme styled with minimal tachyons, syntax hi
     enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
